@@ -1,0 +1,228 @@
+{
+  "run_id": "scope_v1_20261010",
+  "protocol": {
+    "version": 1,
+    "seed": 20261010,
+    "reference_fraction": 0.8,
+    "features": [
+      "nearest_cosine",
+      "top5_mean_cosine",
+      "maximum_prototype_cosine",
+      "known_class_max",
+      "known_class_margin",
+      "normalized_entropy"
+    ],
+    "model": "StandardScaler + balanced logistic regression C=1",
+    "fresh_oos_selection": 51,
+    "fresh_oos_check": 100,
+    "threshold_grid": [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95,
+      1.0,
+      1.1
+    ],
+    "likely_oos_threshold": "5th percentile of known selection support scores; strict less-than",
+    "supported_selection": "grid thresholds floored at likely-OOS threshold; minimum 80% known retention and maximum 5% OOS acceptance; minimum weighted error/review cost then lower threshold",
+    "fallback_upper": 1.1,
+    "oos_scenario_prevalence": 0.2,
+    "false_oos_acceptance_cost": 10,
+    "automatic_actions": false,
+    "known_check": "reused calibrate partition; previously used for temperature fitting, NOT a fresh independent joint test",
+    "fresh_check": "100 previously unused crowd-labeled OOS rows from pinned CLINC extension; no new human adjudication",
+    "old_final_data": "never read or retuned in this experiment"
+  },
+  "binding_sha256": "4acd03b1163b340f79636e9c645c5ef344b8cb36ca28315da319dcc421a6f595",
+  "thresholds": {
+    "lower": 0.7192624859254008,
+    "upper": 0.7192624859254008,
+    "selection_passed": true
+  },
+  "check": {
+    "known_count": 1496,
+    "fresh_oos_count": 100,
+    "known_supported_candidates": 1418,
+    "known_incorrectly_flagged_oos": 78,
+    "fresh_oos_supported_candidates": 3,
+    "fresh_oos_flagged_likely_oos": 97,
+    "fresh_oos_uncertain": 0,
+    "oos_acceptance_upper_95": 0.07571079374983004,
+    "auroc_diagnostic_reused_known": 0.9922058823529412
+  },
+  "old_thresholds_comparison": {
+    "known_supported_candidates": 1393,
+    "fresh_oos_supported_candidates": 13,
+    "scope": "Original frozen thresholds applied descriptively to the same check; not reselected"
+  },
+  "selection": {
+    "thresholds": {
+      "lower": 0.7192624859254008,
+      "upper": 0.7192624859254008,
+      "selection_passed": true
+    },
+    "trials": [
+      {
+        "upper": 0.7192624859254008,
+        "known_retention": 0.9505347593582888,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.27486631016042784
+      },
+      {
+        "upper": 0.7192624859254008,
+        "known_retention": 0.9505347593582888,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.27486631016042784
+      },
+      {
+        "upper": 0.7192624859254008,
+        "known_retention": 0.9505347593582888,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.27486631016042784
+      },
+      {
+        "upper": 0.7192624859254008,
+        "known_retention": 0.9505347593582888,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.27486631016042784
+      },
+      {
+        "upper": 0.7192624859254008,
+        "known_retention": 0.9505347593582888,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.27486631016042784
+      },
+      {
+        "upper": 0.7192624859254008,
+        "known_retention": 0.9505347593582888,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.27486631016042784
+      },
+      {
+        "upper": 0.7192624859254008,
+        "known_retention": 0.9505347593582888,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.27486631016042784
+      },
+      {
+        "upper": 0.7192624859254008,
+        "known_retention": 0.9505347593582888,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.27486631016042784
+      },
+      {
+        "upper": 0.7192624859254008,
+        "known_retention": 0.9505347593582888,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.27486631016042784
+      },
+      {
+        "upper": 0.7192624859254008,
+        "known_retention": 0.9505347593582888,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.27486631016042784
+      },
+      {
+        "upper": 0.7192624859254008,
+        "known_retention": 0.9505347593582888,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.27486631016042784
+      },
+      {
+        "upper": 0.7192624859254008,
+        "known_retention": 0.9505347593582888,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.27486631016042784
+      },
+      {
+        "upper": 0.7192624859254008,
+        "known_retention": 0.9505347593582888,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.27486631016042784
+      },
+      {
+        "upper": 0.7192624859254008,
+        "known_retention": 0.9505347593582888,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.27486631016042784
+      },
+      {
+        "upper": 0.75,
+        "known_retention": 0.9491978609625669,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.2759358288770054
+      },
+      {
+        "upper": 0.8,
+        "known_retention": 0.9411764705882353,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.2823529411764707
+      },
+      {
+        "upper": 0.85,
+        "known_retention": 0.9311497326203209,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.29037433155080217
+      },
+      {
+        "upper": 0.9,
+        "known_retention": 0.9124331550802139,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.30534759358288777
+      },
+      {
+        "upper": 0.95,
+        "known_retention": 0.8649732620320856,
+        "oos_false_acceptance": 0.0196078431372549,
+        "cost": 0.34331550802139044
+      },
+      {
+        "upper": 1.0,
+        "known_retention": 0.0,
+        "oos_false_acceptance": 0.0,
+        "cost": 1.0
+      },
+      {
+        "upper": 1.1,
+        "known_retention": 0.0,
+        "oos_false_acceptance": 0.0,
+        "cost": 1.0
+      }
+    ],
+    "metrics": {
+      "known_count": 1496,
+      "fresh_oos_count": 51,
+      "known_supported_candidates": 1422,
+      "known_incorrectly_flagged_oos": 74,
+      "fresh_oos_supported_candidates": 1,
+      "fresh_oos_flagged_likely_oos": 50,
+      "fresh_oos_uncertain": 0,
+      "oos_acceptance_upper_95": 0.08967153829142846,
+      "auroc_diagnostic_reused_known": 0.9849795533186536
+    }
+  },
+  "automatic_actions": false,
+  "new_independent_joint_test": false,
+  "old_final_reused": false,
+  "limits": [
+    "Only 100 fresh OOS examples; known check data reused from temperature calibration.",
+    "Public crowd-authored labels, not a new independently adjudicated production suite.",
+    "Support score is not calibrated and must not be displayed as probability of being supported.",
+    "No automatic routing authorization; semantic/pretraining overlap cannot be ruled out."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "identity": {
+    "config": {
+      "version": 1,
+      "tokenizer": "porter unicode61",
+      "ranker": "SQLite FTS5 default BM25",
+      "query": "OR of first 12 unique Unicode alphanumeric non-stop terms; fallback first 12 terms",
+      "stop_words_sha256": "40e0a284c5b9a220efffd18d4d739fbd3270091d6ce2c75b6effe289d3be5487",
+      "cache_kib": 65536,
+      "batch_rows": 5000
+    },
+    "collection_sha256": "86e0c5820be6b22280337a67e54cbb626645453d9ac3c377bac45abb81c5653d",
+    "collection_bytes": 3061567852,
+    "expected_passages": 8841823
+  },
+  "passages": 8841823,
+  "index_bytes": 4700164096,
+  "index_sha256": "d4df96b5a928f52200c1aaef4a869fb0d07885b0ecd1daad5da23d4dc3e64ef1",
+  "sqlite_version": "3.53.1",
+  "completed_utc": "2026-10-10T05:22:47.190585+00:00",
+  "build_seconds": 1064.9398672999814,
+  "integrity_check": "passed",
+  "terms": "Non-commercial research only; underlying content rights are not extended. Do not redistribute corpus in the portfolio repository.",
+  "used_for_classifier_training": false,
+  "retrieval_quality_evaluated": false
+}

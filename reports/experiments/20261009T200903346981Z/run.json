@@ -1,0 +1,61 @@
+{
+  "run_id": "20261009T200903346981Z",
+  "status": "completed",
+  "config": {
+    "word_ngram_range": [
+      1,
+      2
+    ],
+    "word_max_features": 15000,
+    "char_ngram_range": [
+      3,
+      5
+    ],
+    "char_max_features": 20000,
+    "min_df": 2,
+    "sublinear_tf": true,
+    "C": 4.0,
+    "solver": "lbfgs",
+    "max_iter": 500,
+    "tol": 0.0001,
+    "seed": 20261010,
+    "blas_threads": 2
+  },
+  "source_hashes": {
+    "__init__.py": "5e9beb7a63c9bd5a4f21ced35b74eaf0fcb410c81a1d49eb0eae44b2b8f00480",
+    "__main__.py": "9b6a3d2945663e63327c5af655c26dd38f2d465edf6a4ce0c3155e45df4cc92b",
+    "common.py": "474bd23cc4fc15f820fc117ce5f7eb9ff271a8b9bf87e6a3db2ba519ea79e9bc",
+    "data.py": "e94686c4c581fb5aa0accaf72fa02406b4712e6b77e2af2f50090d545698249e",
+    "predict.py": "48a49f7aba70423ba044be4da53771d4af06c9a2d5623558270c43f88dbeb84d",
+    "train.py": "2b4164e349fd586366c85740bd3753cbb4c1a2ced4b535591a29d1b3068eeec0"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Sep  1 2026, 14:17:39) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "numpy": "2.5.3",
+    "scikit_learn": "1.9.1",
+    "intentdesk": "0.1.0"
+  },
+  "manifest_sha256": "a27f4c41687e527767e60b2a44115c415423a9f2720d679c75726f0015e04dc9",
+  "dataset_sha256": "36923c3705a59e08fe9c3883d8bc2dd966ef93e22cb78ac41171782a698d56e0",
+  "evaluation_split": "tune",
+  "test_evaluated": false,
+  "probabilities_calibrated": false,
+  "automatic_routing_enabled": false,
+  "fit_samples": 11917,
+  "tune_samples": 1496,
+  "fit_seconds": 23.490740200039,
+  "feature_count": 28973,
+  "iterations": 25,
+  "model_sha256": "e23885f3b84bceb6ea0ffc5bb346560ff26d6738e0f7674417c74e31d3303ce0",
+  "model_bytes": 28153446,
+  "warm_latency": {
+    "unit": "milliseconds",
+    "samples": 50,
+    "batch_size": 1,
+    "median": 1.1893500050064176,
+    "p95": 1.8328900390770282,
+    "scope": "full TF-IDF plus classifier, sequential local requests, two BLAS threads; not a load test"
+  },
+  "reload_max_absolute_error": 0.0
+}

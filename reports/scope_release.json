@@ -1,0 +1,25 @@
+{
+  "run_id": "scope_v1_20261010",
+  "check": {
+    "known_count": 1496,
+    "fresh_oos_count": 100,
+    "known_supported_candidates": 1418,
+    "known_incorrectly_flagged_oos": 78,
+    "fresh_oos_supported_candidates": 3,
+    "fresh_oos_flagged_likely_oos": 97,
+    "fresh_oos_uncertain": 0,
+    "oos_acceptance_upper_95": 0.07571079374983004,
+    "auroc_diagnostic_reused_known": 0.9922058823529412
+  },
+  "old_thresholds_comparison": {
+    "known_supported_candidates": 1393,
+    "fresh_oos_supported_candidates": 13,
+    "scope": "Original frozen thresholds applied descriptively to the same check; not reselected"
+  },
+  "automatic_actions": false,
+  "old_classifier_final_unchanged": true,
+  "fresh_independent_joint_evaluation": false,
+  "data_audit_sha256": "1951ad5fde5d9deefa1ed41331895f2eb3dcfeb2ed2767b8619e87342ebd4a5e",
+  "evaluation_sha256": "4bf7dd3f0b0bc285e506927e87da7773c2d295d6d434acaa1924bfcd63b72c9e",
+  "figure_sha256": "50cad32ffda83f807f1945ca69a7f990a46586e8e8a67fdf3db6ac10b38928b9"
+}

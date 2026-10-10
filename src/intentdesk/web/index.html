@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IntentDesk · Request review</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/assets/style.css">
+  <script src="/assets/app.js" type="module"></script>
+</head>
+<body>
+<header class="app-header">
+  <a class="brand" href="/" aria-label="IntentDesk home"><svg viewBox="0 0 28 28" width="28" height="28" aria-hidden="true"><path d="M4 5h20v13H13l-6 5v-5H4z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 10h10M9 14h6" stroke="currentColor" stroke-width="2"/></svg>IntentDesk</a>
+  <span class="local-state">Local workspace <span class="connection" id="connection">Connecting…</span></span>
+</header>
+<main>
+  <div class="page-heading"><div><h1>Request review</h1><p>Understand the request. Make the final call.</p></div><span class="mode">Human review enabled</span></div>
+  <div class="notice"><strong>Human review stays enabled.</strong> The scope check can flag unsupported requests and can make mistakes. Confirm each decision; no action is executed.</div>
+  <div id="error" class="error" role="alert" hidden></div>
+  <div class="workspace">
+    <section class="queue-pane" aria-labelledby="queue-title">
+      <div class="section-heading"><h2 id="queue-title">Review queue</h2><button id="refresh" class="text-button" type="button">Refresh</button></div>
+      <div class="tabs" aria-label="Queue filter"><button id="pending" type="button" aria-pressed="true">Pending <span id="pending-count">0</span></button><button id="reviewed" type="button" aria-pressed="false">Reviewed <span id="reviewed-count">0</span></button></div>
+      <div id="queue" class="queue"><p class="empty">Loading your local queue…</p></div>
+      <div class="pagination"><button id="previous" class="text-button" type="button" disabled>Previous</button><span id="page">0 requests</span><button id="next" class="text-button" type="button" disabled>Next</button></div>
+      <p class="privacy">Requests and decisions are saved on this PC. Use fictional examples; avoid private account details.</p>
+    </section>
+    <div class="work-pane">
+      <section aria-labelledby="new-title" class="composer">
+        <h2 id="new-title">Try a request</h2>
+        <p class="score-help">Classify a short English assistant request, such as reporting a lost card or asking about weather. This demo does not find products, book services or answer general questions.</p>
+        <form id="submit-form">
+          <label for="request-text">What does the person need?</label>
+          <textarea id="request-text" name="text" rows="3" maxlength="4000" placeholder="For example: I lost my credit card" required aria-describedby="input-help"></textarea>
+          <div class="form-footer"><span id="input-help">English requests · up to 4,000 characters</span><button type="submit" id="analyze">Analyze &amp; add to queue</button></div>
+        </form>
+      </section>
+      <section class="detail" id="detail" aria-labelledby="detail-title" aria-live="polite">
+        <div class="empty-detail"><svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true"><path d="M12 6h24v36H12zM18 15h12M18 23h12M18 31h6" fill="none" stroke="currentColor" stroke-width="2"/></svg><h2 id="detail-title">Your next decision starts here</h2><p>Analyze a request or select one from the queue. Compare the suggestions, then choose the intent that fits.</p></div>
+      </section>
+    </div>
+  </div>
+  <section class="research-search" aria-labelledby="search-title">
+    <div class="section-heading"><h2 id="search-title">Search the research corpus</h2><span id="search-state">Checking index…</span></div>
+    <p>Explore MS MARCO passages with local keyword search. This is a separate research dataset, not a support knowledge base. Retrieved text may be outdated or incorrect.</p>
+    <form id="search-form"><label for="search-query">Search terms</label><div class="search-controls"><input id="search-query" name="query" maxlength="1000" placeholder="For example: what is machine learning" required><button id="search-button" type="submit" disabled>Search passages</button></div></form>
+    <p id="search-message" role="status"></p><ol id="search-results"></ol>
+    <p class="privacy">Non-commercial research use. Results show source passages, not generated or verified answers. Search queries are not saved.</p>
+  </section>
+  <footer>Research demo · 150 known intents · Runs on your CPU <a href="/pilot">Try the card-support pilot</a><a href="/openapi.json">API schema</a></footer>
+</main>
+<template id="detail-template">
+  <div class="section-heading"><h2>Review this request</h2><span class="request-status"></span></div>
+  <blockquote class="request-copy"></blockquote>
+  <p class="request-status scope-status"></p>
+  <p class="prediction-reason"></p>
+  <button class="text-button reanalyze" type="button">Analyze again</button>
+  <p class="field-help reanalyze-help">Adds a new assessment to the queue and keeps this earlier record.</p>
+  <div class="known-suggestions"><h3>Closest known categories</h3><ol class="suggestions"></ol>
+  <p class="score-help">Scores compare the 150 known labels. A high score does not prove that a request is supported.</p>
+  </div>
+  <form class="review-form">
+    <label for="review-label">Your decision</label>
+    <input id="review-label" name="label" list="intent-labels" placeholder="Choose or type an intent" autocomplete="off" required>
+    <datalist id="intent-labels"></datalist>
+    <p class="field-help">Choose <strong>oos</strong> for an unsupported request, or <strong>uncertain</strong> if context is missing.</p>
+    <label for="review-note">Review note <span class="optional">(optional)</span></label>
+    <textarea id="review-note" name="note" rows="2" maxlength="1000" placeholder="Explain a correction or missing context"></textarea>
+    <div class="review-footer"><p class="save-message" role="status"></p><button type="submit">Save decision</button></div>
+  </form>
+  <details class="history"><summary>Decision history</summary><ol></ol></details>
+  <p class="feedback-note">Your review is saved separately. It does not retrain the model or change its evaluation scores.</p>
+</template>
+</body>
+</html>

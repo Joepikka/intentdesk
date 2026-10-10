@@ -1,0 +1,47 @@
+{
+  "status": "completed",
+  "test_exposed": true,
+  "binding": {
+    "protocol": {
+      "version": 1,
+      "primary": "B2_MPNet_linear_temperature_scaled",
+      "policy_run": "policy_20261010T043806079244Z",
+      "neural_run": "neural_20261009T204150600532Z",
+      "baseline_run": "20261009T200903346981Z",
+      "compare": [
+        "B1_lexical",
+        "B2_MPNet_linear",
+        "N1_small",
+        "N2_large"
+      ],
+      "selection_after_test": "forbidden; comparisons are descriptive only",
+      "active_behavior": "review all; failed development gate cannot be overridden by this test",
+      "known_test_count": 4500,
+      "oos_test_count": 1000,
+      "bootstrap_seed": 20261010,
+      "accuracy_interval": "2000 bootstrap resamples of formatting duplicate groups; conditional on this benchmark",
+      "final_test_evaluated": true
+    },
+    "hashes": {
+      "policy_metadata": "f22a4ed27021709b7074c0348ff1340e7f7d3eed4738c4cfc54d0cb3c48ef3d2",
+      "baseline": "e23885f3b84bceb6ea0ffc5bb346560ff26d6738e0f7674417c74e31d3303ce0",
+      "large_head": "ee4a35bf2027186a3ef01d3ade934f00a519c6bbd224eafe301ee22690d2ecb4",
+      "test": "3805510e48037c6a7e51943c7d4e25836ac821705e5525467dbd026a246a335d",
+      "encoder_manifest": "75120c15274e124d0be41cf5e4896ff57970ae03d0d28d52fdb4a4ba4b06b957",
+      "linear.joblib": "c3011a6879a62e7ca7f8a866024184dba1721d971b1f5c10f21dd8810ac34f62",
+      "N1_small.pt": "9cacda0c82242f7b6d267dfb8c9396d3b6f4869c9801fd691fa21561913de6d3"
+    },
+    "source_sha256": {
+      "data.py": "e94686c4c581fb5aa0accaf72fa02406b4712e6b77e2af2f50090d545698249e",
+      "train.py": "dd8ef0c1fe6c8335d68c96212629c391c825404e141a803f83040da25dad411b",
+      "predict.py": "48a49f7aba70423ba044be4da53771d4af06c9a2d5623558270c43f88dbeb84d",
+      "neural.py": "a6c9959d53091129a9d7af9d465dd7bd23ab12cf47add6a0722b160df01e2717",
+      "policy.py": "34878f8123ed370a2600e1364ba108c19cdde80c7110818952bf1fd070715c0a",
+      "final_eval.py": "88cb425dffe8c8153d751fdd4cab41dae09a11fdebf14b656091b8a4d588e6dc"
+    },
+    "uv_lock_sha256": "27d01161b14aa6bb416054907a8a1f18b276c51b7acc237308838e57cb6f8ed5"
+  },
+  "binding_sha256": "21ff793bcdde93298a3968b7b2c4762101a80412a090bd5017b45dda3fd27552",
+  "frozen_utc": "2026-10-10T05:11:43.318059+00:00",
+  "report_sha256": "173afc9924632b28f8a604309db0e31f31dc7c064d9b6aea808a41daf112b12b"
+}

@@ -1,0 +1,462 @@
+{
+  "N1_small": [
+    {
+      "epoch": 1,
+      "fit_loss": 4.653475021969865,
+      "fit_accuracy": 0.3122430141814215,
+      "tune_loss": 3.8890292644500732,
+      "tune_accuracy": 0.6758021116256714,
+      "last_batch_gradient_norm_before_clip": 1.0419480800628662
+    },
+    {
+      "epoch": 2,
+      "fit_loss": 2.8428501481426496,
+      "fit_accuracy": 0.7138541579256524,
+      "tune_loss": 1.827799916267395,
+      "tune_accuracy": 0.8509358167648315,
+      "last_batch_gradient_norm_before_clip": 1.6935127973556519
+    },
+    {
+      "epoch": 3,
+      "fit_loss": 1.3440283176892354,
+      "fit_accuracy": 0.856423596542754,
+      "tune_loss": 0.9068934917449951,
+      "tune_accuracy": 0.9151069521903992,
+      "last_batch_gradient_norm_before_clip": 1.8297789096832275
+    },
+    {
+      "epoch": 4,
+      "fit_loss": 0.7642968588800871,
+      "fit_accuracy": 0.9029957203994294,
+      "tune_loss": 0.5687099695205688,
+      "tune_accuracy": 0.9271390438079834,
+      "last_batch_gradient_norm_before_clip": 1.6127930879592896
+    },
+    {
+      "epoch": 5,
+      "fit_loss": 0.5216117993471076,
+      "fit_accuracy": 0.9233028446756734,
+      "tune_loss": 0.4140922725200653,
+      "tune_accuracy": 0.9438502788543701,
+      "last_batch_gradient_norm_before_clip": 1.1462945938110352
+    },
+    {
+      "epoch": 6,
+      "fit_loss": 0.3946335759900746,
+      "fit_accuracy": 0.9353864227574054,
+      "tune_loss": 0.32897189259529114,
+      "tune_accuracy": 0.9505347609519958,
+      "last_batch_gradient_norm_before_clip": 1.2696471214294434
+    },
+    {
+      "epoch": 7,
+      "fit_loss": 0.3227351124821128,
+      "fit_accuracy": 0.9437777964252748,
+      "tune_loss": 0.27686744928359985,
+      "tune_accuracy": 0.9498662948608398,
+      "last_batch_gradient_norm_before_clip": 0.6020681262016296
+    },
+    {
+      "epoch": 8,
+      "fit_loss": 0.27087133428119536,
+      "fit_accuracy": 0.9494000167827473,
+      "tune_loss": 0.23973828554153442,
+      "tune_accuracy": 0.9538770318031311,
+      "last_batch_gradient_norm_before_clip": 1.7733014822006226
+    },
+    {
+      "epoch": 9,
+      "fit_loss": 0.23707307590437562,
+      "fit_accuracy": 0.9536796173533607,
+      "tune_loss": 0.21655045449733734,
+      "tune_accuracy": 0.9578877091407776,
+      "last_batch_gradient_norm_before_clip": 0.9366565942764282
+    },
+    {
+      "epoch": 10,
+      "fit_loss": 0.2098959356504513,
+      "fit_accuracy": 0.9602248888142989,
+      "tune_loss": 0.1999415159225464,
+      "tune_accuracy": 0.9592245817184448,
+      "last_batch_gradient_norm_before_clip": 0.2557867765426636
+    },
+    {
+      "epoch": 11,
+      "fit_loss": 0.18557963699660085,
+      "fit_accuracy": 0.962658387177981,
+      "tune_loss": 0.18358975648880005,
+      "tune_accuracy": 0.9605615139007568,
+      "last_batch_gradient_norm_before_clip": 0.905821681022644
+    },
+    {
+      "epoch": 12,
+      "fit_loss": 0.16638382057285533,
+      "fit_accuracy": 0.9646723168582697,
+      "tune_loss": 0.17299474775791168,
+      "tune_accuracy": 0.9612299203872681,
+      "last_batch_gradient_norm_before_clip": 0.4315200746059418
+    },
+    {
+      "epoch": 13,
+      "fit_loss": 0.1537930584423012,
+      "fit_accuracy": 0.9692036586389192,
+      "tune_loss": 0.16508038341999054,
+      "tune_accuracy": 0.9625668525695801,
+      "last_batch_gradient_norm_before_clip": 1.3896340131759644
+    },
+    {
+      "epoch": 14,
+      "fit_loss": 0.1429027341355601,
+      "fit_accuracy": 0.9682806075354535,
+      "tune_loss": 0.15942610800266266,
+      "tune_accuracy": 0.9632353186607361,
+      "last_batch_gradient_norm_before_clip": 0.6728360652923584
+    },
+    {
+      "epoch": 15,
+      "fit_loss": 0.1295030122299147,
+      "fit_accuracy": 0.97365108668289,
+      "tune_loss": 0.15334877371788025,
+      "tune_accuracy": 0.9639037251472473,
+      "last_batch_gradient_norm_before_clip": 0.9269688129425049
+    },
+    {
+      "epoch": 16,
+      "fit_loss": 0.12146679247406952,
+      "fit_accuracy": 0.9750776202064277,
+      "tune_loss": 0.14748980104923248,
+      "tune_accuracy": 0.9679144620895386,
+      "last_batch_gradient_norm_before_clip": 0.7663424015045166
+    },
+    {
+      "epoch": 17,
+      "fit_loss": 0.1125303840976944,
+      "fit_accuracy": 0.9761684987832508,
+      "tune_loss": 0.14345328509807587,
+      "tune_accuracy": 0.9645721912384033,
+      "last_batch_gradient_norm_before_clip": 0.5064663887023926
+    },
+    {
+      "epoch": 18,
+      "fit_loss": 0.10367404883781356,
+      "fit_accuracy": 0.9774272048334313,
+      "tune_loss": 0.13889823853969574,
+      "tune_accuracy": 0.9645721912384033,
+      "last_batch_gradient_norm_before_clip": 0.9995139837265015
+    },
+    {
+      "epoch": 19,
+      "fit_loss": 0.09999618352864967,
+      "fit_accuracy": 0.9776789460434673,
+      "tune_loss": 0.13792501389980316,
+      "tune_accuracy": 0.9665775299072266,
+      "last_batch_gradient_norm_before_clip": 1.0863302946090698
+    },
+    {
+      "epoch": 20,
+      "fit_loss": 0.09321121444268106,
+      "fit_accuracy": 0.9803641856171855,
+      "tune_loss": 0.133159801363945,
+      "tune_accuracy": 0.9645721912384033,
+      "last_batch_gradient_norm_before_clip": 0.738389253616333
+    },
+    {
+      "epoch": 21,
+      "fit_loss": 0.08672962183368939,
+      "fit_accuracy": 0.9827976839808676,
+      "tune_loss": 0.13057735562324524,
+      "tune_accuracy": 0.9699198007583618,
+      "last_batch_gradient_norm_before_clip": 0.9499393105506897
+    },
+    {
+      "epoch": 22,
+      "fit_loss": 0.08196030333363101,
+      "fit_accuracy": 0.9825459427708316,
+      "tune_loss": 0.1278569996356964,
+      "tune_accuracy": 0.9679144620895386,
+      "last_batch_gradient_norm_before_clip": 0.5257600545883179
+    },
+    {
+      "epoch": 23,
+      "fit_loss": 0.07563781512081698,
+      "fit_accuracy": 0.985986405974658,
+      "tune_loss": 0.12791931629180908,
+      "tune_accuracy": 0.9645721912384033,
+      "last_batch_gradient_norm_before_clip": 0.6575401425361633
+    },
+    {
+      "epoch": 24,
+      "fit_loss": 0.0705853384192897,
+      "fit_accuracy": 0.9867416296047663,
+      "tune_loss": 0.12755973637104034,
+      "tune_accuracy": 0.9645721912384033,
+      "last_batch_gradient_norm_before_clip": 0.3043336272239685
+    },
+    {
+      "epoch": 25,
+      "fit_loss": 0.0680845438675364,
+      "fit_accuracy": 0.985986405974658,
+      "tune_loss": 0.12545858323574066,
+      "tune_accuracy": 0.9665775299072266,
+      "last_batch_gradient_norm_before_clip": 0.06956377625465393
+    },
+    {
+      "epoch": 26,
+      "fit_loss": 0.06427611383171282,
+      "fit_accuracy": 0.9871611982881597,
+      "tune_loss": 0.12575004994869232,
+      "tune_accuracy": 0.9652406573295593,
+      "last_batch_gradient_norm_before_clip": 0.9340862035751343
+    },
+    {
+      "epoch": 27,
+      "fit_loss": 0.06040869169440497,
+      "fit_accuracy": 0.9878325081815893,
+      "tune_loss": 0.12162532657384872,
+      "tune_accuracy": 0.9652406573295593,
+      "last_batch_gradient_norm_before_clip": 0.9778954386711121
+    },
+    {
+      "epoch": 28,
+      "fit_loss": 0.057248854611887674,
+      "fit_accuracy": 0.9903499202819501,
+      "tune_loss": 0.1210351437330246,
+      "tune_accuracy": 0.9685828685760498,
+      "last_batch_gradient_norm_before_clip": 0.4853397011756897
+    },
+    {
+      "epoch": 29,
+      "fit_loss": 0.05473951988057861,
+      "fit_accuracy": 0.9899303515985567,
+      "tune_loss": 0.12189719080924988,
+      "tune_accuracy": 0.9685828685760498,
+      "last_batch_gradient_norm_before_clip": 0.3225966691970825
+    },
+    {
+      "epoch": 30,
+      "fit_loss": 0.05281173390138379,
+      "fit_accuracy": 0.9895107829151633,
+      "tune_loss": 0.12250979989767075,
+      "tune_accuracy": 0.970588207244873,
+      "last_batch_gradient_norm_before_clip": 0.08530359715223312
+    },
+    {
+      "epoch": 31,
+      "fit_loss": 0.050397893850138854,
+      "fit_accuracy": 0.9903499202819501,
+      "tune_loss": 0.11949657648801804,
+      "tune_accuracy": 0.9672459959983826,
+      "last_batch_gradient_norm_before_clip": 0.29559168219566345
+    },
+    {
+      "epoch": 32,
+      "fit_loss": 0.0467720557198965,
+      "fit_accuracy": 0.9916086263321305,
+      "tune_loss": 0.1198308989405632,
+      "tune_accuracy": 0.9685828685760498,
+      "last_batch_gradient_norm_before_clip": 0.21207711100578308
+    },
+    {
+      "epoch": 33,
+      "fit_loss": 0.043596620326884404,
+      "fit_accuracy": 0.9934547285390618,
+      "tune_loss": 0.11705194413661957,
+      "tune_accuracy": 0.9679144620895386,
+      "last_batch_gradient_norm_before_clip": 0.12923982739448547
+    },
+    {
+      "epoch": 34,
+      "fit_loss": 0.04323073344587595,
+      "fit_accuracy": 0.9926155911722749,
+      "tune_loss": 0.11654237657785416,
+      "tune_accuracy": 0.9692513346672058,
+      "last_batch_gradient_norm_before_clip": 0.15348872542381287
+    },
+    {
+      "epoch": 35,
+      "fit_loss": 0.03970312827045664,
+      "fit_accuracy": 0.9942099521691701,
+      "tune_loss": 0.11773239076137543,
+      "tune_accuracy": 0.9692513346672058,
+      "last_batch_gradient_norm_before_clip": 0.2210279107093811
+    },
+    {
+      "epoch": 36,
+      "fit_loss": 0.038027643155204356,
+      "fit_accuracy": 0.9937903834857766,
+      "tune_loss": 0.1150716245174408,
+      "tune_accuracy": 0.9672459959983826,
+      "last_batch_gradient_norm_before_clip": 0.49810999631881714
+    },
+    {
+      "epoch": 37,
+      "fit_loss": 0.038754379488212046,
+      "fit_accuracy": 0.9931190735923471,
+      "tune_loss": 0.11636897176504135,
+      "tune_accuracy": 0.9672459959983826,
+      "last_batch_gradient_norm_before_clip": 0.3223804831504822
+    },
+    {
+      "epoch": 38,
+      "fit_loss": 0.03602071441669357,
+      "fit_accuracy": 0.9942099521691701,
+      "tune_loss": 0.11716258525848389,
+      "tune_accuracy": 0.9665775299072266,
+      "last_batch_gradient_norm_before_clip": 0.9185770153999329
+    },
+    {
+      "epoch": 39,
+      "fit_loss": 0.034355179000865634,
+      "fit_accuracy": 0.9951330032726358,
+      "tune_loss": 0.11490492522716522,
+      "tune_accuracy": 0.9679144620895386,
+      "last_batch_gradient_norm_before_clip": 0.07279518246650696
+    },
+    {
+      "epoch": 40,
+      "fit_loss": 0.032183794976512414,
+      "fit_accuracy": 0.9953008307459931,
+      "tune_loss": 0.11736049503087997,
+      "tune_accuracy": 0.9672459959983826,
+      "last_batch_gradient_norm_before_clip": 0.30044257640838623
+    }
+  ],
+  "N2_large": [
+    {
+      "epoch": 1,
+      "fit_loss": 3.038049320851715,
+      "fit_accuracy": 0.393639338759755,
+      "tune_loss": 0.6954887509346008,
+      "tune_accuracy": 0.8268716335296631,
+      "last_batch_gradient_norm_before_clip": 5.006631851196289
+    },
+    {
+      "epoch": 2,
+      "fit_loss": 0.4640156825266799,
+      "fit_accuracy": 0.8724511202483847,
+      "tune_loss": 0.2976304590702057,
+      "tune_accuracy": 0.9204545617103577,
+      "last_batch_gradient_norm_before_clip": 7.365935325622559
+    },
+    {
+      "epoch": 3,
+      "fit_loss": 0.24334877380800995,
+      "fit_accuracy": 0.9334564068137954,
+      "tune_loss": 0.21763627231121063,
+      "tune_accuracy": 0.9405080080032349,
+      "last_batch_gradient_norm_before_clip": 5.303562641143799
+    },
+    {
+      "epoch": 4,
+      "fit_loss": 0.16834882189835979,
+      "fit_accuracy": 0.9531761349332886,
+      "tune_loss": 0.1820496767759323,
+      "tune_accuracy": 0.9558823704719543,
+      "last_batch_gradient_norm_before_clip": 4.160799980163574
+    },
+    {
+      "epoch": 5,
+      "fit_loss": 0.12848169932274286,
+      "fit_accuracy": 0.9642527481748763,
+      "tune_loss": 0.17376549541950226,
+      "tune_accuracy": 0.9505347609519958,
+      "last_batch_gradient_norm_before_clip": 1.8266500234603882
+    },
+    {
+      "epoch": 6,
+      "fit_loss": 0.09691427351500981,
+      "fit_accuracy": 0.9731476042628179,
+      "tune_loss": 0.17631535232067108,
+      "tune_accuracy": 0.9525400996208191,
+      "last_batch_gradient_norm_before_clip": 0.807776927947998
+    },
+    {
+      "epoch": 7,
+      "fit_loss": 0.08200973873177891,
+      "fit_accuracy": 0.9769237224133591,
+      "tune_loss": 0.16809937357902527,
+      "tune_accuracy": 0.9525400996208191,
+      "last_batch_gradient_norm_before_clip": 0.6759178042411804
+    },
+    {
+      "epoch": 8,
+      "fit_loss": 0.06459094714593736,
+      "fit_accuracy": 0.9839724762943693,
+      "tune_loss": 0.15263375639915466,
+      "tune_accuracy": 0.9612299203872681,
+      "last_batch_gradient_norm_before_clip": 2.3861467838287354
+    },
+    {
+      "epoch": 9,
+      "fit_loss": 0.05585265351482673,
+      "fit_accuracy": 0.9861542334480154,
+      "tune_loss": 0.1601247787475586,
+      "tune_accuracy": 0.9538770318031311,
+      "last_batch_gradient_norm_before_clip": 1.2726863622665405
+    },
+    {
+      "epoch": 10,
+      "fit_loss": 0.04794543846191105,
+      "fit_accuracy": 0.9874968532348746,
+      "tune_loss": 0.15516895055770874,
+      "tune_accuracy": 0.9538770318031311,
+      "last_batch_gradient_norm_before_clip": 0.18347004055976868
+    },
+    {
+      "epoch": 11,
+      "fit_loss": 0.03719585608080463,
+      "fit_accuracy": 0.9906016614919863,
+      "tune_loss": 0.13924941420555115,
+      "tune_accuracy": 0.9639037251472473,
+      "last_batch_gradient_norm_before_clip": 0.7693969011306763
+    },
+    {
+      "epoch": 12,
+      "fit_loss": 0.03184464449756766,
+      "fit_accuracy": 0.9919442812788454,
+      "tune_loss": 0.16992664337158203,
+      "tune_accuracy": 0.9532085657119751,
+      "last_batch_gradient_norm_before_clip": 2.2684173583984375
+    },
+    {
+      "epoch": 13,
+      "fit_loss": 0.032443201477754494,
+      "fit_accuracy": 0.9919442812788454,
+      "tune_loss": 0.16398702561855316,
+      "tune_accuracy": 0.9585561752319336,
+      "last_batch_gradient_norm_before_clip": 2.759612560272217
+    },
+    {
+      "epoch": 14,
+      "fit_loss": 0.025427042495342403,
+      "fit_accuracy": 0.9942099521691701,
+      "tune_loss": 0.15443307161331177,
+      "tune_accuracy": 0.9578877091407776,
+      "last_batch_gradient_norm_before_clip": 0.2683425843715668
+    },
+    {
+      "epoch": 15,
+      "fit_loss": 0.022749378965876692,
+      "fit_accuracy": 0.9948812620625996,
+      "tune_loss": 0.16829925775527954,
+      "tune_accuracy": 0.9572192430496216,
+      "last_batch_gradient_norm_before_clip": 5.464935302734375
+    },
+    {
+      "epoch": 16,
+      "fit_loss": 0.03059314333622669,
+      "fit_accuracy": 0.992867332382311,
+      "tune_loss": 0.15185897052288055,
+      "tune_accuracy": 0.9565507769584656,
+      "last_batch_gradient_norm_before_clip": 0.37689948081970215
+    },
+    {
+      "epoch": 17,
+      "fit_loss": 0.020265194680408896,
+      "fit_accuracy": 0.9949651757992783,
+      "tune_loss": 0.15929502248764038,
+      "tune_accuracy": 0.9598930478096008,
+      "last_batch_gradient_norm_before_clip": 0.12178045511245728
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IntentDesk · Card-support pilot</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/pilot.css">
+  <script src="/assets/pilot.js" type="module"></script>
+</head>
+<body>
+<header class="app-header"><a class="brand" href="/">IntentDesk</a><a href="/">Request review</a></header>
+<main class="pilot-page">
+  <div class="page-heading"><div><h1>Card-support pilot</h1><p>Review the request. Prepare the right handoff.</p></div><span class="mode">Human decision required</span></div>
+  <div class="notice"><strong>Demonstration tickets.</strong> These fictional messages were authored for this pilot. Results cannot establish customer savings. No bank account is accessed and no external ticket is sent.</div>
+  <div id="pilot-error" class="error" role="alert" hidden></div>
+  <section id="pilot-setup" class="composer" aria-labelledby="setup-title">
+    <h2 id="setup-title">Compare manual and assisted review</h2>
+    <p>You will categorize 14 different tickets: seven without suggestions and seven with model assistance. Each ticket appears once. We record your category, corrections and decision time; results appear after the last ticket.</p>
+    <p class="score-help">Read the category guide below before starting. Use one code per person. Reusing it resumes that person's session; a refresh keeps the original timer. Mark an interruption before saving so it is excluded from timing.</p>
+    <form id="pilot-start-form">
+      <label for="pilot-reviewer">Your reviewer code</label>
+      <input id="pilot-reviewer" name="reviewer" minlength="3" maxlength="40" pattern="[A-Za-z0-9_-]+" placeholder="For example: reviewer01" autocomplete="off" required aria-describedby="reviewer-help">
+      <p id="reviewer-help" class="field-help">Use 3–40 letters, numbers, underscores or hyphens. A name or email address is not needed. Records stay on this PC.</p>
+      <button id="pilot-start" type="submit" disabled>Start or resume comparison</button>
+    </form>
+  </section>
+  <section id="pilot-session" class="detail" aria-labelledby="ticket-title" hidden>
+    <div class="section-heading"><h2 id="ticket-title" tabindex="-1">Review this ticket</h2><span id="pilot-condition" class="request-status"></span></div>
+    <p id="pilot-progress" class="score-help" role="status"></p>
+    <blockquote id="pilot-text" class="request-copy"></blockquote>
+    <div id="pilot-advisory" hidden><h3>Model suggestion</h3><p id="pilot-suggestion"></p><p id="pilot-reason" class="score-help"></p><button id="pilot-use" class="text-button" type="button">Use suggestion</button></div>
+    <p id="manual-help" class="score-help" hidden>Choose from the category guide. Model suggestions are hidden for this ticket.</p>
+    <form id="pilot-decision-form" class="review-form">
+      <label for="pilot-label">Your category</label>
+      <select id="pilot-label" name="label" required><option value="">Choose a category</option></select>
+      <p id="pilot-team-preview" class="field-help">Your decision determines the prepared handoff.</p>
+      <label class="interruption"><input id="pilot-interrupted" type="checkbox"> I was interrupted while reviewing this ticket</label>
+      <div class="review-footer"><p id="pilot-save-state" class="save-message" role="status"></p><button id="pilot-save" type="submit">Save category &amp; prepare handoff</button></div>
+    </form>
+    <div id="pilot-handoff" hidden><h3>Prepared handoff</h3><p id="pilot-handoff-copy"></p><p class="score-help">Saved locally. No message has been sent to an external team.</p><button id="pilot-next" type="button">Open next ticket</button></div>
+  </section>
+  <section id="pilot-results" class="detail" aria-labelledby="results-title" hidden>
+    <h2 id="results-title" tabindex="-1">Your comparison results</h2>
+    <p id="pilot-result-note" class="score-help"></p>
+    <div class="comparison-scroll"><table><caption>Completed decisions in this session</caption><thead><tr><th scope="col">Measure</th><th scope="col">Manual</th><th scope="col">Assisted</th></tr></thead><tbody id="pilot-metrics"></tbody></table></div>
+    <p class="score-help">Accuracy is exact category agreement with the demonstration labels. “Needs clarification” is counted separately and is not an exact category match. Interrupted or over-five-minute tickets remain in accuracy counts and are excluded from timing. Model inference runs before the decision timer starts.</p>
+    <p class="score-help">A single person and fictional tickets cannot prove that assistance saves time. Different ticket difficulty, learning and model mistakes can affect the comparison.</p>
+    <p><a href="/api/pilot/report" download="intentdesk-pilot-results.json">Download aggregate results and protocol</a></p>
+  </section>
+  <section class="research-search" aria-labelledby="guide-title">
+    <h2 id="guide-title">Card-support category guide</h2>
+    <p>This demonstration desk handles six card issues. Requests about other services go to general review; unclear messages need clarification. Team names are illustrative.</p>
+    <dl id="pilot-guide" class="category-guide"></dl>
+  </section>
+  <footer><span id="pilot-human-count">Checking comparison records…</span><a href="/">Back to the 150-intent research demo</a></footer>
+</main>
+</body>
+</html>

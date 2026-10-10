@@ -1,0 +1,26 @@
+{
+  "B2_MPNet_linear": {
+    "samples": 1496,
+    "accuracy": 0.9766042780748663,
+    "macro_f1": 0.9762824478010237,
+    "log_loss": 0.23414383034219638,
+    "multiclass_brier": 0.07325661178345033,
+    "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+  },
+  "N1_small": {
+    "samples": 1496,
+    "accuracy": 0.9679144385026738,
+    "macro_f1": 0.9675867597900174,
+    "log_loss": 0.11490493879505771,
+    "multiclass_brier": 0.04798194688865867,
+    "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+  },
+  "N2_large": {
+    "samples": 1496,
+    "accuracy": 0.963903743315508,
+    "macro_f1": 0.9634017217732389,
+    "log_loss": 0.1392494333435995,
+    "multiclass_brier": 0.054428213651516254,
+    "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+  }
+}

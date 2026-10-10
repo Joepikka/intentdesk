@@ -1,0 +1,74 @@
+{
+  "seed": 20261010,
+  "counts": {
+    "calibrate": 1496,
+    "excluded": 95,
+    "fit": 11917,
+    "locked_test": 5500,
+    "oos_development": 100,
+    "tune": 1496,
+    "validation": 3096
+  },
+  "exclusions": {
+    "duplicate_training_variant": 42,
+    "training_overlap_with_protected_holdout": 49,
+    "validation_overlap_with_locked_test": 4
+  },
+  "group_overlap_between_active_partitions": 0,
+  "policy": "protect test; exclude val overlap; protect val; deduplicate train; seeded 80/10/10 per intent",
+  "fingerprint": "Unicode NFKC, casefold, collapse whitespace, remove punctuation; SHA256",
+  "limitations": [
+    "Fingerprint grouping detects formatting variants, not all semantic near-duplicates.",
+    "It may conservatively group requests whose punctuation changes meaning.",
+    "OOS training examples are unused; no automatic routing policy is trained at this milestone."
+  ],
+  "official_counts": {
+    "train": 15000,
+    "val": 3000,
+    "test": 4500,
+    "oos_train": 100,
+    "oos_val": 100,
+    "oos_test": 1000
+  },
+  "dataset_revision": "828f8093932c8fe6ca7936c3d2e52903b1c523de",
+  "dataset_sha256": "36923c3705a59e08fe9c3883d8bc2dd966ef93e22cb78ac41171782a698d56e0",
+  "domain_mapping_sha256": "b947b579d3b8e74b06f93b01083d8efaff2888b43a3e362533bd88a6e1211b3a",
+  "source_provenance": {
+    "repository": "https://github.com/clinc/oos-eval",
+    "revision": "828f8093932c8fe6ca7936c3d2e52903b1c523de",
+    "acquired_at_utc": "2026-10-09T20:07:50.597862+00:00",
+    "files": {
+      "data_full.json": {
+        "url": "https://raw.githubusercontent.com/clinc/oos-eval/828f8093932c8fe6ca7936c3d2e52903b1c523de/data/data_full.json",
+        "sha256": "36923c3705a59e08fe9c3883d8bc2dd966ef93e22cb78ac41171782a698d56e0",
+        "bytes": 2495390
+      },
+      "domains.json": {
+        "url": "https://raw.githubusercontent.com/clinc/oos-eval/828f8093932c8fe6ca7936c3d2e52903b1c523de/data/domains.json",
+        "sha256": "b947b579d3b8e74b06f93b01083d8efaff2888b43a3e362533bd88a6e1211b3a",
+        "bytes": 3818
+      },
+      "LICENSE": {
+        "url": "https://raw.githubusercontent.com/clinc/oos-eval/828f8093932c8fe6ca7936c3d2e52903b1c523de/LICENSE",
+        "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76",
+        "bytes": 19467
+      },
+      "README.md": {
+        "url": "https://raw.githubusercontent.com/clinc/oos-eval/828f8093932c8fe6ca7936c3d2e52903b1c523de/README.md",
+        "sha256": "8a8df26c4de3d25b6c4cff385ca23602c30e4e56828b015206cbc202f6db363a",
+        "bytes": 2668
+      }
+    }
+  },
+  "test_evaluated": false,
+  "manifest_sha256": "a27f4c41687e527767e60b2a44115c415423a9f2720d679c75726f0015e04dc9",
+  "prepared_sha256": {
+    "calibrate.jsonl": "f305ee5c394aa5a9e84be923ff2a2b86daf322bf454fa72f18b4c5a4741816e8",
+    "excluded.jsonl": "eacdb657abcf1eb0824797c06d9183c05e3311ffbdc0abdd7e07b912f7b97de0",
+    "fit.jsonl": "c53410c90038c458b5bdd605663dcc761cbf6bdb38d7b69e85ba14b9261da38d",
+    "locked_test.jsonl": "3805510e48037c6a7e51943c7d4e25836ac821705e5525467dbd026a246a335d",
+    "oos_development.jsonl": "66e3b307b3fbd31684baa0e158622cdb82b2a0fa2e002ebf3d27f95142119edc",
+    "tune.jsonl": "93987af8d95183ca04ea6feb5ee180882e6f421594d1b1c33380bf54763b3b4e",
+    "validation.jsonl": "cf199b0a877cc41faa6514b867fca09b8f3c08d5138d5ad0cd44e4a0741151de"
+  }
+}

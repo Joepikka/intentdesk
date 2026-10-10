@@ -1,0 +1,185 @@
+{
+  "status": "completed",
+  "completed_utc": "2026-10-10T05:14:23.748148+00:00",
+  "binding_sha256": "21ff793bcdde93298a3968b7b2c4762101a80412a090bd5017b45dda3fd27552",
+  "protocol": {
+    "version": 1,
+    "primary": "B2_MPNet_linear_temperature_scaled",
+    "policy_run": "policy_20261010T043806079244Z",
+    "neural_run": "neural_20261009T204150600532Z",
+    "baseline_run": "20261009T200903346981Z",
+    "compare": [
+      "B1_lexical",
+      "B2_MPNet_linear",
+      "N1_small",
+      "N2_large"
+    ],
+    "selection_after_test": "forbidden; comparisons are descriptive only",
+    "active_behavior": "review all; failed development gate cannot be overridden by this test",
+    "known_test_count": 4500,
+    "oos_test_count": 1000,
+    "bootstrap_seed": 20261010,
+    "accuracy_interval": "2000 bootstrap resamples of formatting duplicate groups; conditional on this benchmark",
+    "final_test_evaluated": true
+  },
+  "counts": {
+    "known": 4500,
+    "oos": 1000,
+    "over_token_limit": 0
+  },
+  "primary_calibrated_model": {
+    "samples": 4500,
+    "accuracy": 0.9624444444444444,
+    "macro_f1": 0.962441619868969,
+    "log_loss": 0.1435311109686934,
+    "multiclass_brier": 0.0586657440753946,
+    "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2",
+    "reliability": {
+      "equal_width_bins": 15,
+      "ece": 0.0074057584849108755,
+      "bins": [
+        {
+          "bin": 2,
+          "count": 3,
+          "confidence": 0.16371382477529853,
+          "accuracy": 0.3333333333333333
+        },
+        {
+          "bin": 3,
+          "count": 5,
+          "confidence": 0.23144169125200728,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 4,
+          "count": 10,
+          "confidence": 0.30380000746310537,
+          "accuracy": 0.3
+        },
+        {
+          "bin": 5,
+          "count": 5,
+          "confidence": 0.3737215483274699,
+          "accuracy": 0.8
+        },
+        {
+          "bin": 6,
+          "count": 11,
+          "confidence": 0.4422975369276742,
+          "accuracy": 0.36363636363636365
+        },
+        {
+          "bin": 7,
+          "count": 43,
+          "confidence": 0.5013108750335745,
+          "accuracy": 0.5581395348837209
+        },
+        {
+          "bin": 8,
+          "count": 43,
+          "confidence": 0.5640398004826737,
+          "accuracy": 0.46511627906976744
+        },
+        {
+          "bin": 9,
+          "count": 56,
+          "confidence": 0.6314901280658499,
+          "accuracy": 0.6964285714285714
+        },
+        {
+          "bin": 10,
+          "count": 62,
+          "confidence": 0.7019454081457326,
+          "accuracy": 0.7096774193548387
+        },
+        {
+          "bin": 11,
+          "count": 71,
+          "confidence": 0.7669746376614238,
+          "accuracy": 0.7746478873239436
+        },
+        {
+          "bin": 12,
+          "count": 84,
+          "confidence": 0.83734649956648,
+          "accuracy": 0.8928571428571429
+        },
+        {
+          "bin": 13,
+          "count": 163,
+          "confidence": 0.9053008597371361,
+          "accuracy": 0.9141104294478528
+        },
+        {
+          "bin": 14,
+          "count": 3944,
+          "confidence": 0.994971664558336,
+          "accuracy": 0.9921399594320487
+        }
+      ]
+    },
+    "group_bootstrap_accuracy_95_percent": [
+      0.9570918023704948,
+      0.9680329110155135
+    ]
+  },
+  "secondary_fixed_model_comparison": {
+    "B1_lexical": {
+      "samples": 4500,
+      "accuracy": 0.9195555555555556,
+      "macro_f1": 0.9185801678139596,
+      "log_loss": 0.5231535291341355,
+      "multiclass_brier": 0.1761663122663632,
+      "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+    },
+    "B2_MPNet_linear": {
+      "samples": 4500,
+      "accuracy": 0.9624444444444444,
+      "macro_f1": 0.962441619868969,
+      "log_loss": 0.2929251347035134,
+      "multiclass_brier": 0.09867773709666294,
+      "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+    },
+    "N1_small": {
+      "samples": 4500,
+      "accuracy": 0.962,
+      "macro_f1": 0.9619537592369408,
+      "log_loss": 0.14859266758865913,
+      "multiclass_brier": 0.06135688492996293,
+      "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+    },
+    "N2_large": {
+      "samples": 4500,
+      "accuracy": 0.9426666666666667,
+      "macro_f1": 0.9423901562935257,
+      "log_loss": 0.22214463545127133,
+      "multiclass_brier": 0.08717317105033165,
+      "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+    }
+  },
+  "proposed_thresholds_offline_only": {
+    "in_scope_count": 4500,
+    "oos_count": 1000,
+    "accepted_in_scope": 4038,
+    "wrong_accepted_in_scope": 38,
+    "accepted_oos": 135,
+    "weighted_coverage": 0.7448666666666667,
+    "weighted_selective_error": 0.04531758107342104,
+    "oos_false_acceptance": 0.135,
+    "weighted_cost": 0.5926888888888888
+  },
+  "active_policy": {
+    "review_required": 5500,
+    "automatic_coverage": 0.0,
+    "actions_executed": 0,
+    "development_gate_passed": false,
+    "test_used_to_enable_routing": false
+  },
+  "encoding_seconds": 157.78706290002447,
+  "limitations": [
+    "Crowdsourced English benchmark, not real support traffic.",
+    "Final results must not select hyperparameters, temperatures, thresholds or replacement models.",
+    "Grouped bootstrap reflects this benchmark, not production distribution shifts.",
+    "Known-class accuracy does not validate unsupported-request detection."
+  ]
+}

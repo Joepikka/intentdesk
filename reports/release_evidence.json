@@ -1,0 +1,383 @@
+{
+  "scope": "Current release assembled from preserved experiment reports. Nested flags describe what each operation evaluated; top-level flags describe current release state.",
+  "classifier_final": {
+    "status": "completed",
+    "completed_utc": "2026-10-10T05:14:23.748148+00:00",
+    "binding_sha256": "21ff793bcdde93298a3968b7b2c4762101a80412a090bd5017b45dda3fd27552",
+    "protocol": {
+      "version": 1,
+      "primary": "B2_MPNet_linear_temperature_scaled",
+      "policy_run": "policy_20261010T043806079244Z",
+      "neural_run": "neural_20261009T204150600532Z",
+      "baseline_run": "20261009T200903346981Z",
+      "compare": [
+        "B1_lexical",
+        "B2_MPNet_linear",
+        "N1_small",
+        "N2_large"
+      ],
+      "selection_after_test": "forbidden; comparisons are descriptive only",
+      "active_behavior": "review all; failed development gate cannot be overridden by this test",
+      "known_test_count": 4500,
+      "oos_test_count": 1000,
+      "bootstrap_seed": 20261010,
+      "accuracy_interval": "2000 bootstrap resamples of formatting duplicate groups; conditional on this benchmark",
+      "final_test_evaluated": true
+    },
+    "counts": {
+      "known": 4500,
+      "oos": 1000,
+      "over_token_limit": 0
+    },
+    "primary_calibrated_model": {
+      "samples": 4500,
+      "accuracy": 0.9624444444444444,
+      "macro_f1": 0.962441619868969,
+      "log_loss": 0.1435311109686934,
+      "multiclass_brier": 0.0586657440753946,
+      "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2",
+      "reliability": {
+        "equal_width_bins": 15,
+        "ece": 0.0074057584849108755,
+        "bins": [
+          {
+            "bin": 2,
+            "count": 3,
+            "confidence": 0.16371382477529853,
+            "accuracy": 0.3333333333333333
+          },
+          {
+            "bin": 3,
+            "count": 5,
+            "confidence": 0.23144169125200728,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 4,
+            "count": 10,
+            "confidence": 0.30380000746310537,
+            "accuracy": 0.3
+          },
+          {
+            "bin": 5,
+            "count": 5,
+            "confidence": 0.3737215483274699,
+            "accuracy": 0.8
+          },
+          {
+            "bin": 6,
+            "count": 11,
+            "confidence": 0.4422975369276742,
+            "accuracy": 0.36363636363636365
+          },
+          {
+            "bin": 7,
+            "count": 43,
+            "confidence": 0.5013108750335745,
+            "accuracy": 0.5581395348837209
+          },
+          {
+            "bin": 8,
+            "count": 43,
+            "confidence": 0.5640398004826737,
+            "accuracy": 0.46511627906976744
+          },
+          {
+            "bin": 9,
+            "count": 56,
+            "confidence": 0.6314901280658499,
+            "accuracy": 0.6964285714285714
+          },
+          {
+            "bin": 10,
+            "count": 62,
+            "confidence": 0.7019454081457326,
+            "accuracy": 0.7096774193548387
+          },
+          {
+            "bin": 11,
+            "count": 71,
+            "confidence": 0.7669746376614238,
+            "accuracy": 0.7746478873239436
+          },
+          {
+            "bin": 12,
+            "count": 84,
+            "confidence": 0.83734649956648,
+            "accuracy": 0.8928571428571429
+          },
+          {
+            "bin": 13,
+            "count": 163,
+            "confidence": 0.9053008597371361,
+            "accuracy": 0.9141104294478528
+          },
+          {
+            "bin": 14,
+            "count": 3944,
+            "confidence": 0.994971664558336,
+            "accuracy": 0.9921399594320487
+          }
+        ]
+      },
+      "group_bootstrap_accuracy_95_percent": [
+        0.9570918023704948,
+        0.9680329110155135
+      ]
+    },
+    "secondary_fixed_model_comparison": {
+      "B1_lexical": {
+        "samples": 4500,
+        "accuracy": 0.9195555555555556,
+        "macro_f1": 0.9185801678139596,
+        "log_loss": 0.5231535291341355,
+        "multiclass_brier": 0.1761663122663632,
+        "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+      },
+      "B2_MPNet_linear": {
+        "samples": 4500,
+        "accuracy": 0.9624444444444444,
+        "macro_f1": 0.962441619868969,
+        "log_loss": 0.2929251347035134,
+        "multiclass_brier": 0.09867773709666294,
+        "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+      },
+      "N1_small": {
+        "samples": 4500,
+        "accuracy": 0.962,
+        "macro_f1": 0.9619537592369408,
+        "log_loss": 0.14859266758865913,
+        "multiclass_brier": 0.06135688492996293,
+        "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+      },
+      "N2_large": {
+        "samples": 4500,
+        "accuracy": 0.9426666666666667,
+        "macro_f1": 0.9423901562935257,
+        "log_loss": 0.22214463545127133,
+        "multiclass_brier": 0.08717317105033165,
+        "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+      }
+    },
+    "proposed_thresholds_offline_only": {
+      "in_scope_count": 4500,
+      "oos_count": 1000,
+      "accepted_in_scope": 4038,
+      "wrong_accepted_in_scope": 38,
+      "accepted_oos": 135,
+      "weighted_coverage": 0.7448666666666667,
+      "weighted_selective_error": 0.04531758107342104,
+      "oos_false_acceptance": 0.135,
+      "weighted_cost": 0.5926888888888888
+    },
+    "active_policy": {
+      "review_required": 5500,
+      "automatic_coverage": 0.0,
+      "actions_executed": 0,
+      "development_gate_passed": false,
+      "test_used_to_enable_routing": false
+    },
+    "encoding_seconds": 157.78706290002447,
+    "limitations": [
+      "Crowdsourced English benchmark, not real support traffic.",
+      "Final results must not select hyperparameters, temperatures, thresholds or replacement models.",
+      "Grouped bootstrap reflects this benchmark, not production distribution shifts.",
+      "Known-class accuracy does not validate unsupported-request detection."
+    ]
+  },
+  "retrieval_development": {
+    "protocol": {
+      "config": {
+        "version": 1,
+        "sample_queries": 100,
+        "selection": "lowest SHA256(intentdesk-search-v1:qid)",
+        "cutoff": 10,
+        "timeout_seconds": 10.0,
+        "bootstrap_seed": 20261010,
+        "use": "exploratory official development benchmark, not a final test"
+      },
+      "index_config": {
+        "version": 1,
+        "tokenizer": "porter unicode61",
+        "ranker": "SQLite FTS5 default BM25",
+        "query": "OR of first 12 unique Unicode alphanumeric non-stop terms; fallback first 12 terms",
+        "stop_words_sha256": "40e0a284c5b9a220efffd18d4d739fbd3270091d6ce2c75b6effe289d3be5487",
+        "cache_kib": 65536,
+        "batch_rows": 5000
+      },
+      "query_ids": [
+        "1101289",
+        "97391",
+        "1014882",
+        "550945",
+        "843512",
+        "297720",
+        "993593",
+        "882982",
+        "644524",
+        "433462",
+        "37669",
+        "590769",
+        "995220",
+        "1004721",
+        "669182",
+        "998320",
+        "749665",
+        "494501",
+        "621228",
+        "996055",
+        "990177",
+        "1085319",
+        "1087137",
+        "1093314",
+        "869217",
+        "635322",
+        "991718",
+        "671179",
+        "1005500",
+        "592192",
+        "361620",
+        "1036228",
+        "1102275",
+        "848100",
+        "1026431",
+        "186420",
+        "1082499",
+        "663440",
+        "1028643",
+        "1008974",
+        "1017383",
+        "429242",
+        "1083162",
+        "856056",
+        "732735",
+        "1096388",
+        "597366",
+        "1094142",
+        "1029734",
+        "195215",
+        "987751",
+        "1100080",
+        "678277",
+        "1086931",
+        "987788",
+        "996024",
+        "164963",
+        "719329",
+        "1089985",
+        "1100599",
+        "1100559",
+        "14586",
+        "1071763",
+        "945276",
+        "1028131",
+        "414487",
+        "990765",
+        "826613",
+        "10556",
+        "986146",
+        "1041074",
+        "1015943",
+        "1023102",
+        "923204",
+        "164617",
+        "1020123",
+        "1033162",
+        "854639",
+        "654980",
+        "1058239",
+        "84581",
+        "623075",
+        "356464",
+        "521108",
+        "1094404",
+        "413032",
+        "1086202",
+        "669187",
+        "321522",
+        "1087635",
+        "985165",
+        "568908",
+        "937440",
+        "507930",
+        "838232",
+        "122727",
+        "986730",
+        "616935",
+        "1010634",
+        "1088167"
+      ],
+      "benchmark": {
+        "source_revision": "21b4ece9f4fc10fa4cec2028bb74287629945df6",
+        "files": {
+          "queries.tar.gz": {
+            "url": "https://msmarco.z22.web.core.windows.net/msmarcoranking/queries.tar.gz",
+            "bytes": 18882551,
+            "sha256": "05e4c62c9c8520cd695725340d4c990627fd1a92eb8a71b88e3c746031ba6de8",
+            "etag": "\"0x8DBE166DF74CA0C\""
+          },
+          "qrels.dev.tsv": {
+            "url": "https://msmarco.z22.web.core.windows.net/msmarcoranking/qrels.dev.tsv",
+            "bytes": 1201626,
+            "sha256": "a1befe0a99974b166b9e09408ccccae471fda5df4953fd6dd86ce4caac691752",
+            "etag": "\"0x8DBE166ABFFF421\""
+          },
+          "queries.dev.tsv": {
+            "member_of": "queries.tar.gz",
+            "bytes": 4449602,
+            "sha256": "757b7e935ff46728be84cbf7d195c3e6ae479d6449d92bbb87b09fe56bebf5ee"
+          }
+        },
+        "retrieved_utc": "2026-10-10T05:06:53.459787+00:00",
+        "split": "official development; no leaderboard test evaluation"
+      },
+      "index_sha256": "d4df96b5a928f52200c1aaef4a869fb0d07885b0ecd1daad5da23d4dc3e64ef1"
+    },
+    "query_count": 100,
+    "full_corpus_passages": 8841823,
+    "mrr_at_10": 0.21951587301587303,
+    "recall_at_10": 0.435,
+    "hit_rate_at_10": 0.44,
+    "mrr_bootstrap_95_percent": [
+      0.15114375,
+      0.29366349206349207
+    ],
+    "timeouts_counted_as_zero": 0,
+    "median_ms": 738.417250016937,
+    "p95_ms": 3418.327454954851,
+    "limits": "100-query development sample; incomplete relevance judgments; lexical ranking only; not final/production evidence",
+    "classifier_test_evaluated": false,
+    "answer_generation_evaluated": false
+  },
+  "retrieval_index": {
+    "status": "completed",
+    "identity": {
+      "config": {
+        "version": 1,
+        "tokenizer": "porter unicode61",
+        "ranker": "SQLite FTS5 default BM25",
+        "query": "OR of first 12 unique Unicode alphanumeric non-stop terms; fallback first 12 terms",
+        "stop_words_sha256": "40e0a284c5b9a220efffd18d4d739fbd3270091d6ce2c75b6effe289d3be5487",
+        "cache_kib": 65536,
+        "batch_rows": 5000
+      },
+      "collection_sha256": "86e0c5820be6b22280337a67e54cbb626645453d9ac3c377bac45abb81c5653d",
+      "collection_bytes": 3061567852,
+      "expected_passages": 8841823
+    },
+    "passages": 8841823,
+    "index_bytes": 4700164096,
+    "index_sha256": "d4df96b5a928f52200c1aaef4a869fb0d07885b0ecd1daad5da23d4dc3e64ef1",
+    "sqlite_version": "3.53.1",
+    "completed_utc": "2026-10-10T05:22:47.190585+00:00",
+    "build_seconds": 1064.9398672999814,
+    "integrity_check": "passed",
+    "terms": "Non-commercial research only; underlying content rights are not extended. Do not redistribute corpus in the portfolio repository.",
+    "used_for_classifier_training": false,
+    "retrieval_quality_evaluated": false
+  },
+  "test_evaluated": true,
+  "automatic_routing": false,
+  "paid_services_required": false,
+  "final_figure_sha256": "96062a95898dfe34c7ae83da9aa30499ac9388c6d960d5227b8c651377fea0f0"
+}

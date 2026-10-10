@@ -1,0 +1,828 @@
+{
+  "neural_run": "neural_20261009T204150600532Z",
+  "policy_run": "policy_20261010T043806079244Z",
+  "test_evaluated": false,
+  "neural_development_metrics": {
+    "B2_MPNet_linear": {
+      "samples": 1496,
+      "accuracy": 0.9766042780748663,
+      "macro_f1": 0.9762824478010237,
+      "log_loss": 0.23414383034219638,
+      "multiclass_brier": 0.07325661178345033,
+      "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+    },
+    "N1_small": {
+      "samples": 1496,
+      "accuracy": 0.9679144385026738,
+      "macro_f1": 0.9675867597900174,
+      "log_loss": 0.11490493879505771,
+      "multiclass_brier": 0.04798194688865867,
+      "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+    },
+    "N2_large": {
+      "samples": 1496,
+      "accuracy": 0.963903743315508,
+      "macro_f1": 0.9634017217732389,
+      "log_loss": 0.1392494333435995,
+      "multiclass_brier": 0.054428213651516254,
+      "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+    }
+  },
+  "calibration_and_independent_check": {
+    "B2_MPNet_linear": {
+      "temperature_fit": {
+        "temperature": 0.4913405463209951,
+        "fit_split": "calibrate",
+        "nll_before": 0.22510807138916203,
+        "nll_after": 0.0876301920690264,
+        "near_search_boundary": false
+      },
+      "calibration_fit_metrics": {
+        "before": {
+          "samples": 1496,
+          "accuracy": 0.9786096256684492,
+          "macro_f1": 0.9784482924482923,
+          "log_loss": 0.22510807138916203,
+          "multiclass_brier": 0.06970459536088741,
+          "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2",
+          "reliability": {
+            "equal_width_bins": 15,
+            "ece": 0.13225390040990273,
+            "bins": [
+              {
+                "bin": 0,
+                "count": 1,
+                "confidence": 0.04894680028341928,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 1,
+                "count": 3,
+                "confidence": 0.12402398497740931,
+                "accuracy": 0.6666666666666666
+              },
+              {
+                "bin": 2,
+                "count": 5,
+                "confidence": 0.17344365980684334,
+                "accuracy": 0.8
+              },
+              {
+                "bin": 3,
+                "count": 13,
+                "confidence": 0.2290475896223145,
+                "accuracy": 0.6153846153846154
+              },
+              {
+                "bin": 4,
+                "count": 10,
+                "confidence": 0.3119714981118713,
+                "accuracy": 0.9
+              },
+              {
+                "bin": 5,
+                "count": 16,
+                "confidence": 0.3648831716523654,
+                "accuracy": 0.6875
+              },
+              {
+                "bin": 6,
+                "count": 37,
+                "confidence": 0.43747523806322547,
+                "accuracy": 0.7837837837837838
+              },
+              {
+                "bin": 7,
+                "count": 23,
+                "confidence": 0.5053251814463213,
+                "accuracy": 0.8695652173913043
+              },
+              {
+                "bin": 8,
+                "count": 44,
+                "confidence": 0.5726101547580289,
+                "accuracy": 0.9545454545454546
+              },
+              {
+                "bin": 9,
+                "count": 45,
+                "confidence": 0.639658335733601,
+                "accuracy": 0.9777777777777777
+              },
+              {
+                "bin": 10,
+                "count": 45,
+                "confidence": 0.7030687915525943,
+                "accuracy": 1.0
+              },
+              {
+                "bin": 11,
+                "count": 108,
+                "confidence": 0.7694177303404713,
+                "accuracy": 0.9722222222222222
+              },
+              {
+                "bin": 12,
+                "count": 191,
+                "confidence": 0.8360993183882609,
+                "accuracy": 1.0
+              },
+              {
+                "bin": 13,
+                "count": 362,
+                "confidence": 0.9044469315880954,
+                "accuracy": 0.9972375690607734
+              },
+              {
+                "bin": 14,
+                "count": 593,
+                "confidence": 0.9601919944313655,
+                "accuracy": 1.0
+              }
+            ]
+          }
+        },
+        "after": {
+          "samples": 1496,
+          "accuracy": 0.9786096256684492,
+          "macro_f1": 0.9784482924482923,
+          "log_loss": 0.0876301920690264,
+          "multiclass_brier": 0.036188373476856245,
+          "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2",
+          "reliability": {
+            "equal_width_bins": 15,
+            "ece": 0.00949220731105033,
+            "bins": [
+              {
+                "bin": 2,
+                "count": 1,
+                "confidence": 0.16203821169731514,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 4,
+                "count": 1,
+                "confidence": 0.3102483539751891,
+                "accuracy": 1.0
+              },
+              {
+                "bin": 5,
+                "count": 3,
+                "confidence": 0.3788440582140731,
+                "accuracy": 0.3333333333333333
+              },
+              {
+                "bin": 6,
+                "count": 2,
+                "confidence": 0.4263527656940711,
+                "accuracy": 0.5
+              },
+              {
+                "bin": 7,
+                "count": 8,
+                "confidence": 0.5020213942091116,
+                "accuracy": 0.625
+              },
+              {
+                "bin": 8,
+                "count": 9,
+                "confidence": 0.5604043831791268,
+                "accuracy": 0.6666666666666666
+              },
+              {
+                "bin": 9,
+                "count": 10,
+                "confidence": 0.6330984440252527,
+                "accuracy": 0.8
+              },
+              {
+                "bin": 10,
+                "count": 13,
+                "confidence": 0.7055051670244086,
+                "accuracy": 0.5384615384615384
+              },
+              {
+                "bin": 11,
+                "count": 19,
+                "confidence": 0.7629151724433781,
+                "accuracy": 0.8947368421052632
+              },
+              {
+                "bin": 12,
+                "count": 18,
+                "confidence": 0.8334682408010198,
+                "accuracy": 1.0
+              },
+              {
+                "bin": 13,
+                "count": 38,
+                "confidence": 0.902630827176559,
+                "accuracy": 0.8947368421052632
+              },
+              {
+                "bin": 14,
+                "count": 1374,
+                "confidence": 0.9952560398003701,
+                "accuracy": 0.9941775836972343
+              }
+            ]
+          }
+        }
+      },
+      "independent_check_in_scope": {
+        "before": {
+          "samples": 2396,
+          "accuracy": 0.9628547579298832,
+          "macro_f1": 0.9626227439933628,
+          "log_loss": 0.28441230670536916,
+          "multiclass_brier": 0.09070760007060254,
+          "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2",
+          "reliability": {
+            "equal_width_bins": 15,
+            "ece": 0.1396958843573064,
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2,
+                "confidence": 0.05829903679814809,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 1,
+                "count": 11,
+                "confidence": 0.10742583745220714,
+                "accuracy": 0.18181818181818182
+              },
+              {
+                "bin": 2,
+                "count": 26,
+                "confidence": 0.16573030503520877,
+                "accuracy": 0.34615384615384615
+              },
+              {
+                "bin": 3,
+                "count": 14,
+                "confidence": 0.23277276228952984,
+                "accuracy": 0.6428571428571429
+              },
+              {
+                "bin": 4,
+                "count": 23,
+                "confidence": 0.3004390690014954,
+                "accuracy": 0.8695652173913043
+              },
+              {
+                "bin": 5,
+                "count": 42,
+                "confidence": 0.3680357745087146,
+                "accuracy": 0.6666666666666666
+              },
+              {
+                "bin": 6,
+                "count": 60,
+                "confidence": 0.4332178379987955,
+                "accuracy": 0.75
+              },
+              {
+                "bin": 7,
+                "count": 67,
+                "confidence": 0.5034966278931244,
+                "accuracy": 0.835820895522388
+              },
+              {
+                "bin": 8,
+                "count": 58,
+                "confidence": 0.5655070357417815,
+                "accuracy": 0.9482758620689655
+              },
+              {
+                "bin": 9,
+                "count": 86,
+                "confidence": 0.6349699231970639,
+                "accuracy": 0.9883720930232558
+              },
+              {
+                "bin": 10,
+                "count": 113,
+                "confidence": 0.7035955231546042,
+                "accuracy": 0.9823008849557522
+              },
+              {
+                "bin": 11,
+                "count": 181,
+                "confidence": 0.7698690535444169,
+                "accuracy": 0.994475138121547
+              },
+              {
+                "bin": 12,
+                "count": 299,
+                "confidence": 0.8369793326249665,
+                "accuracy": 0.9933110367892977
+              },
+              {
+                "bin": 13,
+                "count": 589,
+                "confidence": 0.9044609136388492,
+                "accuracy": 0.99830220713073
+              },
+              {
+                "bin": 14,
+                "count": 825,
+                "confidence": 0.9603843757687901,
+                "accuracy": 0.9963636363636363
+              }
+            ]
+          }
+        },
+        "after": {
+          "samples": 2396,
+          "accuracy": 0.9628547579298832,
+          "macro_f1": 0.9626227439933628,
+          "log_loss": 0.1408190565647583,
+          "multiclass_brier": 0.053741121411180225,
+          "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2",
+          "reliability": {
+            "equal_width_bins": 15,
+            "ece": 0.0068223004246959025,
+            "bins": [
+              {
+                "bin": 2,
+                "count": 1,
+                "confidence": 0.18434209615844266,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 3,
+                "count": 3,
+                "confidence": 0.2310697387898207,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 4,
+                "count": 5,
+                "confidence": 0.30627552279686804,
+                "accuracy": 0.4
+              },
+              {
+                "bin": 5,
+                "count": 5,
+                "confidence": 0.36689891355552723,
+                "accuracy": 0.4
+              },
+              {
+                "bin": 6,
+                "count": 13,
+                "confidence": 0.4310096443302337,
+                "accuracy": 0.23076923076923078
+              },
+              {
+                "bin": 7,
+                "count": 21,
+                "confidence": 0.4977397359322303,
+                "accuracy": 0.42857142857142855
+              },
+              {
+                "bin": 8,
+                "count": 31,
+                "confidence": 0.5652240141646011,
+                "accuracy": 0.5806451612903226
+              },
+              {
+                "bin": 9,
+                "count": 15,
+                "confidence": 0.6282585745032804,
+                "accuracy": 0.6666666666666666
+              },
+              {
+                "bin": 10,
+                "count": 22,
+                "confidence": 0.696595410639786,
+                "accuracy": 0.6363636363636364
+              },
+              {
+                "bin": 11,
+                "count": 28,
+                "confidence": 0.7682000496864573,
+                "accuracy": 0.75
+              },
+              {
+                "bin": 12,
+                "count": 46,
+                "confidence": 0.8336457871911619,
+                "accuracy": 0.9130434782608695
+              },
+              {
+                "bin": 13,
+                "count": 70,
+                "confidence": 0.9068704847053577,
+                "accuracy": 0.8571428571428571
+              },
+              {
+                "bin": 14,
+                "count": 2136,
+                "confidence": 0.9949640506700798,
+                "accuracy": 0.9953183520599251
+              }
+            ]
+          }
+        }
+      }
+    },
+    "N1_small": {
+      "temperature_fit": {
+        "temperature": 0.9517202250901745,
+        "fit_split": "calibrate",
+        "nll_before": 0.10222055996093246,
+        "nll_after": 0.10191480853100672,
+        "near_search_boundary": false
+      },
+      "calibration_fit_metrics": {
+        "before": {
+          "samples": 1496,
+          "accuracy": 0.9759358288770054,
+          "macro_f1": 0.975807447912711,
+          "log_loss": 0.10222055996093246,
+          "multiclass_brier": 0.03688557855853566,
+          "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2",
+          "reliability": {
+            "equal_width_bins": 15,
+            "ece": 0.013898609072889806,
+            "bins": [
+              {
+                "bin": 4,
+                "count": 2,
+                "confidence": 0.29899671972751246,
+                "accuracy": 0.5
+              },
+              {
+                "bin": 5,
+                "count": 5,
+                "confidence": 0.3782382910566554,
+                "accuracy": 0.2
+              },
+              {
+                "bin": 6,
+                "count": 4,
+                "confidence": 0.4325346260312801,
+                "accuracy": 0.5
+              },
+              {
+                "bin": 7,
+                "count": 7,
+                "confidence": 0.5146988309596933,
+                "accuracy": 0.7142857142857143
+              },
+              {
+                "bin": 8,
+                "count": 16,
+                "confidence": 0.5619286519907054,
+                "accuracy": 0.375
+              },
+              {
+                "bin": 9,
+                "count": 8,
+                "confidence": 0.6322323053218613,
+                "accuracy": 0.75
+              },
+              {
+                "bin": 10,
+                "count": 11,
+                "confidence": 0.6989388170726091,
+                "accuracy": 0.9090909090909091
+              },
+              {
+                "bin": 11,
+                "count": 21,
+                "confidence": 0.7720914939293408,
+                "accuracy": 0.8571428571428571
+              },
+              {
+                "bin": 12,
+                "count": 27,
+                "confidence": 0.8359546892435977,
+                "accuracy": 0.9629629629629629
+              },
+              {
+                "bin": 13,
+                "count": 68,
+                "confidence": 0.9051321513116828,
+                "accuracy": 0.8970588235294118
+              },
+              {
+                "bin": 14,
+                "count": 1327,
+                "confidence": 0.9933510247404077,
+                "accuracy": 0.9977392614920875
+              }
+            ]
+          }
+        },
+        "after": {
+          "samples": 1496,
+          "accuracy": 0.9759358288770054,
+          "macro_f1": 0.975807447912711,
+          "log_loss": 0.10191480853100669,
+          "multiclass_brier": 0.03660301489307919,
+          "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2",
+          "reliability": {
+            "equal_width_bins": 15,
+            "ece": 0.011644734472359178,
+            "bins": [
+              {
+                "bin": 4,
+                "count": 2,
+                "confidence": 0.31283013039637736,
+                "accuracy": 0.5
+              },
+              {
+                "bin": 5,
+                "count": 3,
+                "confidence": 0.3865807745862074,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 6,
+                "count": 5,
+                "confidence": 0.42681048616457273,
+                "accuracy": 0.4
+              },
+              {
+                "bin": 7,
+                "count": 5,
+                "confidence": 0.508055900080352,
+                "accuracy": 0.8
+              },
+              {
+                "bin": 8,
+                "count": 18,
+                "confidence": 0.5654459396288761,
+                "accuracy": 0.3888888888888889
+              },
+              {
+                "bin": 9,
+                "count": 8,
+                "confidence": 0.6381118980634246,
+                "accuracy": 0.75
+              },
+              {
+                "bin": 10,
+                "count": 9,
+                "confidence": 0.699316924003855,
+                "accuracy": 1.0
+              },
+              {
+                "bin": 11,
+                "count": 16,
+                "confidence": 0.774423778571063,
+                "accuracy": 0.875
+              },
+              {
+                "bin": 12,
+                "count": 28,
+                "confidence": 0.8343469285946323,
+                "accuracy": 0.8928571428571429
+              },
+              {
+                "bin": 13,
+                "count": 60,
+                "confidence": 0.9072373923503384,
+                "accuracy": 0.9
+              },
+              {
+                "bin": 14,
+                "count": 1342,
+                "confidence": 0.9941642032181437,
+                "accuracy": 0.9970193740685543
+              }
+            ]
+          }
+        }
+      },
+      "independent_check_in_scope": {
+        "before": {
+          "samples": 2396,
+          "accuracy": 0.9599332220367279,
+          "macro_f1": 0.9596121479291154,
+          "log_loss": 0.17026857329797154,
+          "multiclass_brier": 0.06014181096741079,
+          "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2",
+          "reliability": {
+            "equal_width_bins": 15,
+            "ece": 0.0075388956600122865,
+            "bins": [
+              {
+                "bin": 3,
+                "count": 1,
+                "confidence": 0.25113661335097076,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 4,
+                "count": 2,
+                "confidence": 0.27772409450000257,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 5,
+                "count": 9,
+                "confidence": 0.3620941707727238,
+                "accuracy": 0.2222222222222222
+              },
+              {
+                "bin": 6,
+                "count": 11,
+                "confidence": 0.4471947893383427,
+                "accuracy": 0.45454545454545453
+              },
+              {
+                "bin": 7,
+                "count": 21,
+                "confidence": 0.504926107516737,
+                "accuracy": 0.42857142857142855
+              },
+              {
+                "bin": 8,
+                "count": 25,
+                "confidence": 0.5628212075690153,
+                "accuracy": 0.6
+              },
+              {
+                "bin": 9,
+                "count": 40,
+                "confidence": 0.6304353229580484,
+                "accuracy": 0.575
+              },
+              {
+                "bin": 10,
+                "count": 30,
+                "confidence": 0.7026970883753709,
+                "accuracy": 0.6666666666666666
+              },
+              {
+                "bin": 11,
+                "count": 32,
+                "confidence": 0.7709777370178854,
+                "accuracy": 0.875
+              },
+              {
+                "bin": 12,
+                "count": 49,
+                "confidence": 0.835563723836509,
+                "accuracy": 0.8571428571428571
+              },
+              {
+                "bin": 13,
+                "count": 102,
+                "confidence": 0.907922654443245,
+                "accuracy": 0.9411764705882353
+              },
+              {
+                "bin": 14,
+                "count": 2074,
+                "confidence": 0.9921370870239302,
+                "accuracy": 0.9932497589199615
+              }
+            ]
+          }
+        },
+        "after": {
+          "samples": 2396,
+          "accuracy": 0.9599332220367279,
+          "macro_f1": 0.9596121479291154,
+          "log_loss": 0.17205987415705007,
+          "multiclass_brier": 0.06018222116456378,
+          "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2",
+          "reliability": {
+            "equal_width_bins": 15,
+            "ece": 0.007579043439600968,
+            "bins": [
+              {
+                "bin": 3,
+                "count": 1,
+                "confidence": 0.2644403913212096,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 4,
+                "count": 2,
+                "confidence": 0.2881335407045128,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 5,
+                "count": 7,
+                "confidence": 0.3692864839533662,
+                "accuracy": 0.2857142857142857
+              },
+              {
+                "bin": 6,
+                "count": 6,
+                "confidence": 0.43353277227292675,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 7,
+                "count": 24,
+                "confidence": 0.49910928796443654,
+                "accuracy": 0.4583333333333333
+              },
+              {
+                "bin": 8,
+                "count": 26,
+                "confidence": 0.5646035718371165,
+                "accuracy": 0.5769230769230769
+              },
+              {
+                "bin": 9,
+                "count": 37,
+                "confidence": 0.6377013833877216,
+                "accuracy": 0.6756756756756757
+              },
+              {
+                "bin": 10,
+                "count": 25,
+                "confidence": 0.7012191646459813,
+                "accuracy": 0.52
+              },
+              {
+                "bin": 11,
+                "count": 33,
+                "confidence": 0.7671371220020943,
+                "accuracy": 0.8181818181818182
+              },
+              {
+                "bin": 12,
+                "count": 44,
+                "confidence": 0.8346906139464747,
+                "accuracy": 0.8409090909090909
+              },
+              {
+                "bin": 13,
+                "count": 91,
+                "confidence": 0.9075757810850146,
+                "accuracy": 0.945054945054945
+              },
+              {
+                "bin": 14,
+                "count": 2100,
+                "confidence": 0.9931092041578607,
+                "accuracy": 0.9923809523809524
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "policy_check": {
+    "metrics": {
+      "in_scope_count": 2396,
+      "oos_count": 80,
+      "accepted_in_scope": 2181,
+      "wrong_accepted_in_scope": 16,
+      "accepted_oos": 9,
+      "weighted_coverage": 0.7507136894824709,
+      "weighted_selective_error": 0.03708769062272406,
+      "oos_false_acceptance": 0.1125,
+      "weighted_cost": 0.5277086811352253
+    },
+    "gate": {
+      "passed": false,
+      "requirements": {
+        "coverage_lower_bound": true,
+        "selective_error_upper_bound": false,
+        "oos_acceptance_upper_bound": false,
+        "point_cost_below_all_review": true
+      },
+      "simultaneous_confidence": 0.95,
+      "known_conditional_error_upper": 0.012307478823248248,
+      "oos_acceptance_upper": 0.21092218959360323,
+      "weighted_coverage_lower": 0.7176373051083411,
+      "weighted_selective_error_upper": 0.07108987157016948,
+      "assumptions": "Fixed policy; independent unique requests within IS/OOS strata; fixed 20% OOS scenario. Not a production guarantee."
+    },
+    "cost_uncertainty": {
+      "weighted_cost_percentile_95": [
+        0.4068447412353923,
+        0.6599114148580969
+      ],
+      "paired_difference_vs_all_review_95": [
+        -0.5931552587646076,
+        -0.3400885851419031
+      ],
+      "resampling": "IS and OOS separately, fixed 20% mixture, fixed checked policy",
+      "limitation": "Conditional bootstrap misses unseen OOS errors when zero are observed; use the exact OOS upper bound too."
+    }
+  },
+  "shareable_figures": {
+    "milestone_02_neural.png": {
+      "source_run": "neural_20261009T204150600532Z",
+      "sha256": "a1b063f4253a80bd3d4a7a3b2d77a7c0c83c468db88b824e59384d3248ab89f0"
+    },
+    "milestone_03_calibration.png": {
+      "source_run": "policy_20261010T043806079244Z",
+      "sha256": "15a82af31f4d1e12649da47ffb5a8f0a95beb1a5553a93fa81d261806d72d4e5"
+    }
+  },
+  "scope": "Fixed milestone snapshots; no raw dataset or model weights. Primary unsupported-request gate failed; active routing remains review-all."
+}

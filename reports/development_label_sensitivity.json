@@ -1,0 +1,85 @@
+{
+  "neural_run": "neural_20261009T204150600532Z",
+  "reviewer": "AI assistant",
+  "human_reviewed": false,
+  "data_modified": false,
+  "test_evaluated": false,
+  "tune_input_sha256": "93987af8d95183ca04ea6feb5ee180882e6f421594d1b1c33380bf54763b3b4e",
+  "excluded_only_in_supplementary_analysis": [
+    "train:01300"
+  ],
+  "models": {
+    "B1_word_char_tfidf": {
+      "original": {
+        "samples": 1496,
+        "accuracy": 0.9498663101604278,
+        "macro_f1": 0.9494126625302826,
+        "log_loss": 0.39897178483036827,
+        "multiclass_brier": 0.13051961632478476,
+        "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+      },
+      "supplementary_excluding_flagged_row": {
+        "samples": 1495,
+        "accuracy": 0.9505016722408027,
+        "macro_f1": 0.9500102676542035,
+        "log_loss": 0.3939074874992992,
+        "multiclass_brier": 0.12954978986962476,
+        "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+      }
+    },
+    "B2_MPNet_linear": {
+      "original": {
+        "samples": 1496,
+        "accuracy": 0.9766042780748663,
+        "macro_f1": 0.9762824478010237,
+        "log_loss": 0.23414383172440006,
+        "multiclass_brier": 0.07325661218988566,
+        "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+      },
+      "supplementary_excluding_flagged_row": {
+        "samples": 1495,
+        "accuracy": 0.9772575250836121,
+        "macro_f1": 0.9769156975921682,
+        "log_loss": 0.22752278443798724,
+        "multiclass_brier": 0.07199770628429342,
+        "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+      }
+    },
+    "N1_small": {
+      "original": {
+        "samples": 1496,
+        "accuracy": 0.9679144385026738,
+        "macro_f1": 0.9675867597900174,
+        "log_loss": 0.11490493969715188,
+        "multiclass_brier": 0.047981947000072425,
+        "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+      },
+      "supplementary_excluding_flagged_row": {
+        "samples": 1495,
+        "accuracy": 0.968561872909699,
+        "macro_f1": 0.9682200095811617,
+        "log_loss": 0.10205863840957428,
+        "multiclass_brier": 0.04668483522170625,
+        "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+      }
+    },
+    "N2_large": {
+      "original": {
+        "samples": 1496,
+        "accuracy": 0.963903743315508,
+        "macro_f1": 0.9634017217732389,
+        "log_loss": 0.13924943292366493,
+        "multiclass_brier": 0.054428213660331994,
+        "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+      },
+      "supplementary_excluding_flagged_row": {
+        "samples": 1495,
+        "accuracy": 0.9645484949832775,
+        "macro_f1": 0.9640349715643833,
+        "log_loss": 0.1259990925274353,
+        "multiclass_brier": 0.05324277497147049,
+        "brier_convention": "mean over rows of sum over classes of squared probability error; range 0 to 2"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "reviewer": "AI assistant",
+  "human_reviewed": false,
+  "modifies_training_or_evaluation_labels": false,
+  "flags": [
+    {
+      "example_id": "train:01300",
+      "working_split": "tune",
+      "text": "tell me about today weather",
+      "recorded_intent": "replacement_card_duration",
+      "suspected_intent": "weather",
+      "finding": "The text explicitly asks about weather and contains no card-replacement reference. Suspected upstream annotation error; requires human review.",
+      "action": "Preserve the original benchmark; report a separately labeled one-row exclusion sensitivity analysis. No training, calibration, validation or final-test rows changed."
+    }
+  ]
+}

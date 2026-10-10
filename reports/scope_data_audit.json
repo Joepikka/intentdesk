@@ -1,0 +1,563 @@
+{
+  "protocol": {
+    "version": 1,
+    "seed": 20261010,
+    "reference_fraction": 0.8,
+    "features": [
+      "nearest_cosine",
+      "top5_mean_cosine",
+      "maximum_prototype_cosine",
+      "known_class_max",
+      "known_class_margin",
+      "normalized_entropy"
+    ],
+    "model": "StandardScaler + balanced logistic regression C=1",
+    "fresh_oos_selection": 51,
+    "fresh_oos_check": 100,
+    "threshold_grid": [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95,
+      1.0,
+      1.1
+    ],
+    "likely_oos_threshold": "5th percentile of known selection support scores; strict less-than",
+    "supported_selection": "grid thresholds floored at likely-OOS threshold; minimum 80% known retention and maximum 5% OOS acceptance; minimum weighted error/review cost then lower threshold",
+    "fallback_upper": 1.1,
+    "oos_scenario_prevalence": 0.2,
+    "false_oos_acceptance_cost": 10,
+    "automatic_actions": false,
+    "known_check": "reused calibrate partition; previously used for temperature fitting, NOT a fresh independent joint test",
+    "fresh_check": "100 previously unused crowd-labeled OOS rows from pinned CLINC extension; no new human adjudication",
+    "old_final_data": "never read or retuned in this experiment"
+  },
+  "source_url": "https://raw.githubusercontent.com/clinc/oos-eval/828f8093932c8fe6ca7936c3d2e52903b1c523de/data/data_oos_plus.json",
+  "source_sha256": "bfcca9ae515623541dc1983c94c4ed7cae9d26b42ae47d74b972e51bb6f7a21f",
+  "original_manifest_sha256": "a27f4c41687e527767e60b2a44115c415423a9f2720d679c75726f0015e04dc9",
+  "sha256": {
+    "train_oos.jsonl": "66e3b307b3fbd31684baa0e158622cdb82b2a0fa2e002ebf3d27f95142119edc",
+    "selection_oos.jsonl": "e8b5d54a22e031e74e0a2722e73b678cfaff75f4ed4e01d24f1d45563c233665",
+    "check_oos.jsonl": "b0329673c8e71a2352184a326611769e5c10a90f5063a9201f651bc9819b3b11"
+  },
+  "counts": {
+    "train_oos": 100,
+    "selection_oos": 51,
+    "check_oos": 100
+  },
+  "excluded": [
+    {
+      "index": 0,
+      "group": "238ed9e0ccb439c701ac3a0616b24c0b64c24089f441f730007ab143bf82d829",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 1,
+      "group": "71ea78e3b175a8b2a2b262b49fb1628961afa22a8b900df88fdabeb7b8a03f00",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 2,
+      "group": "0c13f6799f26541f17a2988e58bae755b333533128a1d6ed44c708846620962a",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 3,
+      "group": "861e1f6d6cbf1ebac63303fd75497a40d919d15fc12bf2d505bb7fc30f585b0d",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 4,
+      "group": "832942907cd64973ca037e87e94c87a72e8b648cdacaa494b1796ca36af43f80",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 5,
+      "group": "7767df80aa6cbed0504b1cbc442daae4bf9835a0f85b9ce3eb3407d6840a461d",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 7,
+      "group": "c99aa8ff03baca9e3ab492d8370cb64568d17246d0936e88802062007e25d78e",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 8,
+      "group": "8f5d0dfa8a05e984b4101183c47d778b7adc90ea7a8ff0e0d23bea83f281971b",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 9,
+      "group": "d5c4569cc701e064615691dcda8639d651b2c596ae2bd2b363b3ff26d1a15576",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 10,
+      "group": "18a5ee1bd85caf52a331e86fbe44d2e065e879bc45e4daab20d71759a11703ec",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 11,
+      "group": "f3d860c8757a0c0955b7c133d00e17e9df01bdc2b2c42937d29f4e9ca6cecb5d",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 12,
+      "group": "1909e1a0ad862cdd865c42066c9353f7036ab56e5ce90f0b5f1b5b8d84e47315",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 13,
+      "group": "6c52c8ac06a8d4862c1f0b0d9c1fa5af8217519c65bf5e8644b22e3d536bf971",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 14,
+      "group": "8870f949ac43819ed72acdc93213cf0f2bf199eb004e8a637946a65743b647ad",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 15,
+      "group": "c502f23939c4da611dde36e2ccbbe4bf4e0d1c2c533b8e79aea575fbe62a96c6",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 16,
+      "group": "685b29ef47f114537e6bf264f3d3e0f433608cb1cb5d9be037cb87c5c1e42b38",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 17,
+      "group": "67413468e7ccc80ff708c3a213e5a3860e298ea915df09042ce00d935cb99c3d",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 18,
+      "group": "fc9ed6ce6be9b941520a59aa4d30cb1f9a8b2a015f7588c445812674748d0a2e",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 19,
+      "group": "a556fc024e7ffbcdca93a5c0dad5b0f1a75dc696c8321591e64af56ae83b477e",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 20,
+      "group": "1a05ad08d0cfd1d9028daee81f348271eda75f935b5a720aab1bb5294b9fa33a",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 21,
+      "group": "ae178b43ab526b9684d1daf3a7259ce556d1463b79111c9600f486783135400d",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 22,
+      "group": "77d8fc3ff90cefe6a13f031a620b25d2982f688eedd64d11355aed17cd88431b",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 23,
+      "group": "22c4eb458b32d6ab06d4ab5fc83a7052726ab2ca31e2eaec1f1f154abdd91c64",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 24,
+      "group": "7da8aba284b1a2e8df7a4fbcff1516eb2e285a63de171ab43e084fd3b66e11cd",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 25,
+      "group": "ab9757743db0c69a3a4731ccb5bff58c31dc66cfad47f80eeb30893fdcd2da17",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 26,
+      "group": "6ac4014f4c4f149d60ec4b46301862738dc610061c3f76d28ac37d5286f3038b",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 27,
+      "group": "1892e9d318606c32e567f6c7744c95c20719378a3b7974d618611455b307cf81",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 28,
+      "group": "419faaceac7c3cb21c7ee86264f809bf5d516b15feaa09b3a537b20f444ae00e",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 29,
+      "group": "fc1db586e9a0623c1c9ccaca01b59d544034a473c7f5fe56e6f23435cb7cdf47",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 30,
+      "group": "db6f6aa9df0e77f9631936892e335a7dd175b46f0da98e58e6e3b0d38f2d54a0",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 31,
+      "group": "925194d23fe482055f7198ea93db6fc8bd74493d4a235d49644210b83fb11b03",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 32,
+      "group": "d0e9c78d2faa072e5b49d33dcced8bbc40350d5dee4fa9d36ef936f43c89f28e",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 33,
+      "group": "5cc04e47d2109298f60d0e852d875da792470c98f69f002563c057d1557d8406",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 34,
+      "group": "77d728ba70b11ba2eb023227318a78220a69babaa9add095e5ec047e20a0a8d9",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 35,
+      "group": "35923e21bc0f373f16be9c450f9a353f3fc80c934026522871c98a08f1f0a651",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 36,
+      "group": "048066d0564653ef3bf804555865277c21690961d00565346b9fb756de7fdef1",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 37,
+      "group": "6d408d5994329fb5b8bf263f056aebcbe184e6ad22afe58a6ce0062e2d8f7f7a",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 38,
+      "group": "c0cee56f01e471a580f8770a8d7e5c869f26bfbfa07ee6a3b7c48ec10a1148a5",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 39,
+      "group": "40b3781ea9d950e00c3b381d08881a3e81b56f1e3eca1b0e473f1716dde065a7",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 40,
+      "group": "60a265fa2a3dda0e7608318811bc3d19d8309596bb706c5220dfdf657afa981b",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 41,
+      "group": "42790b789c6982fae5a187b44ba9f10811c1a0c4e2972cc359fd58d737029c74",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 42,
+      "group": "23eaa5d5052f35080f4698bef49fa2b26cbcb51058550cd915f2cfc5a55eba58",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 43,
+      "group": "71e99e9ea96cc2d9e58d9663cbd7ae03e2c6c7c954764762d9f0cbdb2a10a275",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 44,
+      "group": "0727ae65cab28fdcec807f2306e8cf0d5363749029c4b4b87a15f5732c4fce81",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 45,
+      "group": "86ae4f30b63a2fac63b3c88cac02a7236ce1dfc920aa582ed1c711a21af2a986",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 46,
+      "group": "b54638e94f583c73458eaf238bc77020288e0c9a1c72d9713ebbb31bd41c0458",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 47,
+      "group": "bcfd461221a589bd34afcb1fbf3dc7f7367d1e02965e6d6bae79b087f2a4b502",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 48,
+      "group": "f53ccd51f077b87a4b8943ff1648a6ad4366c8df3e43921b6dcec29eb043088e",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 49,
+      "group": "abfca7e87493a9e30d1e750339f0dd56246664134fe97ac9765cdfa5a6d97d53",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 50,
+      "group": "d157f5250ce7271899d50e8b5420b7d0d2cdeb8143b94310e408929227d7febc",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 51,
+      "group": "412f6123b134bc59a0342786bf779ebf2d91472a2c2f9b859483f296bfc81899",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 52,
+      "group": "76b0d106f403b4d5d5af4d1836ad8bfbdd00445e203c1391490670163991b194",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 53,
+      "group": "1dc2681fd2182a5bdb1d8d27370d69a18f30857fd7d5a23033867aedfb82eba4",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 54,
+      "group": "0a886a04723bb7a93ed2af7c21a0ef5fc6f5cc2119d6a00187fe5890535bc7b6",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 55,
+      "group": "a0b703333722537ae03b0b585dd2971249c7272b48e719f47e29872aacaf8f92",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 56,
+      "group": "38088da2e17e2721cafef149823bcd48f75f9860602de8852d141b9e5b3094dd",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 57,
+      "group": "53538e20cd6dee5082237f4bd8cad8e53fafe9e4ee0c9ad559b63603925b6842",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 58,
+      "group": "14b8485eb10e4976929c19710fee6fdb2c09e812a988ef2ff7ba6966efb19791",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 59,
+      "group": "36b3d8b24077184677364e73078407f63f53a430622806e2193cf66f3848b7a8",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 60,
+      "group": "98b2ec6685aca3f1eec0d31e45d80a49509cd39c7c2a400a984ecd5452cdb155",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 61,
+      "group": "ef77bd600f2753af1882648ac954561f580d24dbc6adfd8ac1bc3a6d233a200a",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 62,
+      "group": "63bd9117cbc6e690a1321b626ef75744e0bf6007ddbab219103d115ca327812c",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 63,
+      "group": "8f803eb4508ba7ed80b148a337726a575a1b8603761831387c813066706e9659",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 64,
+      "group": "f263cf5634cc32b6a489519723d2cf1d298b6a9fdf517f0f346e06c81c16f941",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 65,
+      "group": "9c779c90eaa80b7cbe2359e6ca8ff84b7d8af4339d3ec2b6768545ba8a2379a6",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 66,
+      "group": "0075c08dd3f4d9260a824c25baf9db44cd52b725079f430194511cfe454a4e51",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 67,
+      "group": "2ce4556dd4a82885c8fa1990df62b480fd6a3fc02e30117da7645f87864287cf",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 68,
+      "group": "95e5bde119698aa97bbbca1ff7a3960d67b504b5071478bd29c314cf856371bd",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 69,
+      "group": "87a0d6821bfd530a58b06b50fdeb53dab1d96ffd1d22d41a1272b7f2e54eed04",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 70,
+      "group": "5741145c4c1c7e5b602972dbb1797bcfb89b10cd43219644e193fc7e3b59fc0b",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 71,
+      "group": "722fad0519cd0ecad59ceca006336ee44b46a877464a5dc1cbe881f6252733c4",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 72,
+      "group": "70f81662eca06eb810be29bb07eceddccca0fa67065c647b642f2469718bc6e0",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 73,
+      "group": "35874525bfd9b197560cd40b8c77324a716c175aacb58d47a6c18a7f99df43f4",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 74,
+      "group": "80492556b8c66cc7d7e38fe4ea234a63f2987d90ae1fae49ab89c8df1cab8106",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 75,
+      "group": "6babf105e285c1de96ab23451cb4e8ee2ffb78cc2959e43a21806b857518db4b",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 76,
+      "group": "a02db14bbda84d0675f5294c019426f731f01ce574733505d5ec353aea98b4a3",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 77,
+      "group": "ccb8fb1535651b9284af270fe54df0e3bee879c5c26e36d633ab90638421f96f",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 78,
+      "group": "2c308450a507528a0b0c039b238495ac7ad18ea808b1c88281868de412befe06",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 79,
+      "group": "d863d43e2ad6ab5580b230c4a758755b83e350b7aeced562079429c3f73ab5e7",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 80,
+      "group": "b614ed88b873cfdad3f5ff71e446131c5274dd81db277c3874ed4a8438ce6915",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 81,
+      "group": "ba12a36da9025e80435f3d12ba3d8d9a2d46386b7b4cdb6710c529a7f281ebd8",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 82,
+      "group": "f6879ea8885a57c49430756a3199a89e865cb3ac3947b35969c140a3b5816343",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 83,
+      "group": "29b9ba39c31847fc5e3a0aa55ab36ee1f5de9b14e81aa5a67384105e5c50f46b",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 84,
+      "group": "df8e244508bab1c37cd53400671a8b04e4994de2a307944cae193bbc6640e792",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 85,
+      "group": "35a8559638570e778811cdeafb8e118a3f42691d36daa8f967e9666cc7e1a544",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 86,
+      "group": "36fe20a03e67d80914abbf6acf3f10566607200dc63c02d8e3c4087c797a741c",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 87,
+      "group": "abdfee17c7a178943e86a80849f5dbd5d498ed2101df908bef52de5f31a34e48",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 88,
+      "group": "a54f70a3fb8e1369a6cbce9b0fedc2b6cc0dd7e5b43fb46701c35726c938c1f7",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 89,
+      "group": "14eb13478456f918b52eeae863c8a60d650fc21c98fc48d8f35c339dcc15882a",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 90,
+      "group": "827c85e0f3b6df306bea3a76297585dc3131466fb1bed796450106cb1ce64cea",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 91,
+      "group": "a60dbab2f25e7e9cf02ad41b45faaf1dfe9976d61ba909f602686a3c7f4bb322",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 92,
+      "group": "614068d8346db42065dda17044534c37a3d447c66d84133afd18fcaca025a404",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 93,
+      "group": "4aa03e533e8356d432dd5d4769f60d23f715e1275544258e773b589da60c2562",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 94,
+      "group": "a4f8feda07057ce1490c48add3024db70ae36922c4bdf45e6c3989172dc72dad",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 95,
+      "group": "e9f7c36a5ab3a0d8537986746e6e00efab6acb256ca7c012edd23fa26ed25ff8",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 96,
+      "group": "f3a97fb2ee0730cdc51aa8ed9f4ce5844c7da0739daab1240239b4e2ec23c434",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 97,
+      "group": "fa415d7a88ebb4f5f7f9f094aaafedc556fb0bdc2729cb47587ff3a25d04e611",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 98,
+      "group": "0630bb85acc1586e4d2dc92b559ced0a94c46b791ab4e22fea3c4c974241fa0f",
+      "reason": "existing or duplicate fingerprint"
+    },
+    {
+      "index": 99,
+      "group": "f61373dba2905b453096cb022cec805bcdcc0c0a5d0ee15b53e2ce441c23b7df",
+      "reason": "existing or duplicate fingerprint"
+    }
+  ],
+  "cross_partition_fingerprint_overlap": 0,
+  "labels": "Original crowd-authored OOS labels; no independent new semantic adjudication",
+  "limits": "Fingerprint exclusion cannot prove absence of paraphrase or pretrained-encoder overlap."
+}

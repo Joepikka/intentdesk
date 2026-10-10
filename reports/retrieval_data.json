@@ -1,0 +1,26 @@
+{
+  "status": "downloaded_and_audited",
+  "source_url": "https://raw.githubusercontent.com/microsoft/msmarco/21b4ece9f4fc10fa4cec2028bb74287629945df6/Datasets.md",
+  "source_revision": "21b4ece9f4fc10fa4cec2028bb74287629945df6",
+  "download_url": "https://msmarco.z22.web.core.windows.net/msmarcoranking/collection.tar.gz",
+  "terms_url": "https://microsoft.github.io/msmarco/",
+  "terms": "Non-commercial research only; underlying content rights are not extended. Do not redistribute corpus in the portfolio repository.",
+  "retrieved_utc": "2026-10-09T20:33:03.722256+00:00",
+  "archive": {
+    "bytes": 1035009698,
+    "md5_base64": "h90Bgm2j4q1FRHulr1d2KA==",
+    "sha256": "70667529e474322327d6441c8f7b621f2a805a7f6220897d9f80e5a8294bd62e",
+    "etag": "\"0x8DBE166D3DC101A\""
+  },
+  "collection": {
+    "passages": 8841823,
+    "bytes": 3061567852,
+    "sha256": "86e0c5820be6b22280337a67e54cbb626645453d9ac3c377bac45abb81c5653d",
+    "ids": "unique contiguous ascending integers, starting at zero",
+    "encoding": "UTF-8"
+  },
+  "used_for_classifier_training": false,
+  "retrieval_index_built": false,
+  "retrieval_quality_evaluated": false,
+  "pretraining_overlap": "MPNet model card lists MS MARCO training pairs; retrieval scores using it must disclose exposure."
+}
