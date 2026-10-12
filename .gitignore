@@ -32,3 +32,4 @@ reports/*smoke.json
 reports/pilot_comparison.json
 reports/Pilot_Comparison.md
 reports/publication_local.json
+reports/robustness/

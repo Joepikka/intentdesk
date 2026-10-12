@@ -27,6 +27,12 @@ def main() -> None:
     server.add_argument("--port", type=int, default=8765)
     pilot_report = commands.add_parser("pilot-report", help="Export recorded manual/assisted pilot outcomes from the running local app")
     pilot_report.add_argument("--port", type=int, default=8765)
+    label_sheet = commands.add_parser("robustness-template", help="Export a blank synthetic-case label sheet without loading a model")
+    label_sheet.add_argument("--cases", type=Path)
+    label_sheet.add_argument("--output", type=Path)
+    robustness = commands.add_parser("test-robustness", help="Check synthetic development cases without retraining or reopening frozen benchmarks")
+    robustness.add_argument("--cases", type=Path)
+    robustness.add_argument("--labels", type=Path)
     routing = commands.add_parser("route", help="Recommend an intent route or human review using the frozen policy")
     routing.add_argument("text", help="A request, enclosed in quotes")
     neural_inference = commands.add_parser("predict-neural", help="Suggest intents using the larger local neural head")
@@ -53,6 +59,12 @@ def main() -> None:
         elif args.command == "pilot-report":
             from intentdesk.pilot_report import export_report
             result = export_report(root, args.port)
+        elif args.command == "robustness-template":
+            from intentdesk.robustness import export_template
+            result = export_template(root, args.cases, args.output)
+        elif args.command == "test-robustness":
+            from intentdesk.robustness import run_suite
+            result = run_suite(root, args.cases, args.labels)
         elif args.command == "train":
             from intentdesk.train import train
             result = train(root)

@@ -17,6 +17,7 @@ IntentDesk demonstrates an applied NLP/ML workflow plus a local inference applic
 | Retrieval | A complete 8.84M-passage SQLite FTS5/BM25 index, official development queries/qrels, MRR@10/recall@10 and timeouts |
 | ML application engineering | FastAPI inference, reusable model, SQLite review history, optimistic concurrency, local browser UI and versioned artifacts |
 | Workflow evaluation | A six-category card-support pilot, local category-to-team handoffs, blinded manual trials, assisted trials, fixed timing exclusions and reviewer-level exploratory comparisons |
+| Robustness/error analysis | Sixty versioned synthetic cases, negation/typo/ambiguity slices, confusion matrix, per-class metrics, separate reviewer-declared labels and recorded failures |
 | Responsible claims | Frozen encoder disclosure, source/terms preservation, unsupported-request limitation, no production/real-customer savings claim |
 
 The project does **not** currently prove full-transformer fine-tuning, distributed training, generative-model alignment, computer vision, reinforcement learning, production MLOps or customer-facing RAG quality. Add future work only when you have implemented, evaluated and understood it.
@@ -37,6 +38,8 @@ The [card-support demonstration](CARD_SUPPORT_PILOT.md) gives the project a conc
 
 For that last claim, show [Milestone 6](../reports/Milestone_06.md): the known check is reused calibration data, with 78 false OOS flags out of 1,496. The OOS false-acceptance upper bound is 7.57% at one-sided 95% confidence. This is not an independently validated automatic router. The motorcycle example is a development demonstration, not held-out evidence.
 
+You can also demonstrate the [robustness tool](ROBUSTNESS.md): it found 22 disagreements across 60 synthetic development cases, including all 12 clarification cases. Explain why its 63.3% provisional agreement is not independent accuracy and cannot be compared directly with the 96.24% known-intent benchmark. Show the blank human label sheet and the distinction between annotation quality, model error and runtime failure. This is useful evidence of ML evaluation judgment; it does not establish a stronger model.
+
 Add the measured retrieval score from Milestone 4 only with its 100-query development-sample qualification. Do not describe it as a full official leaderboard result. Do not claim you trained the 109M-parameter encoder or used GB of intent labels. Match a job description's terms only when these artifacts and your knowledge support them; keyword stuffing and hidden text do not demonstrate competence.
 
 ## A five-minute demo
@@ -54,6 +57,7 @@ Use fictional inputs. A screen recording and a public source repository can demo
 - Derive softmax and explain how cross-entropy changes the weights through backpropagation.
 - Why does positive temperature scaling preserve the highest-scoring class?
 - Why might a linear classifier on frozen embeddings beat a larger neural head?
+- Why does the current robustness suite expose ambiguity errors despite a strong known-intent benchmark? What would a fair follow-up evaluation require?
 - What information leaks if TF-IDF is fitted before splitting the data?
 - Why are calibration data, threshold-selection data and an independent check separate?
 - What does 135 accepted unsupported requests out of 1,000 tell you, and why can you not fix the threshold using that final test?

@@ -28,8 +28,11 @@ No account is accessed, no external ticket is sent, and no conversational answer
 | Separate scope advisory | **97/100** fresh OOS examples flagged; **78/1,496** known examples incorrectly flagged | Known examples reuse calibration data; not an independent joint evaluation |
 | Full-corpus retrieval | **MRR@10 0.2195**, mean recall@10 **0.435** | Fixed 100-query official development sample, not leaderboard test |
 | Manual versus assisted pilot | **0 completed human comparisons** at publication | Automated verification excluded; no measured human improvement |
+| Synthetic robustness suite | **38/60 (63.3%)** provisional label agreement; **0/12** clarification cases matched | Assistant-authored development cases, zero human-reviewed labels; not independent accuracy |
 
 [Final classifier report](reports/Milestone_05.md) · [Scope limitations](reports/Milestone_06.md) · [Workflow protocol](docs/CARD_SUPPORT_PILOT.md) · [Machine-readable evidence](reports/release_evidence.json)
+
+[Robustness findings](reports/Milestone_08.md) expose typos, negation and ambiguity weaknesses in the current card workflow. The [recorded run](reports/robustness_v1/report.md) preserves its disagreements and confusion matrix. Its task and references differ from the known-intent benchmark above, so the two percentages are not directly comparable.
 
 ![Frozen final model comparison and unsupported-request result](reports/figures/milestone_05_final.png)
 
@@ -85,9 +88,14 @@ uv run --locked python learning/math_exercise.py
 
 # With the app running; exports actual recorded human results only.
 uv run --locked intentdesk pilot-report
+
+# Without the server; first export a blank sheet for a person to label.
+uv run --locked intentdesk robustness-template
+uv run --locked --extra neural intentdesk test-robustness
+# After actual review: append --labels local/robustness_labels.csv
 ```
 
-Publication checks: **97 Python tests and 2 JavaScript tests passed**. Tests use synthetic fixtures and do not require model weights or the large corpus. CI runs the same tests. See [verification scope](docs/VERIFICATION.md).
+Current local checks (12 October 2026): **108 Python tests and 2 JavaScript tests passed**. Tests use synthetic fixtures and do not require model weights or the large corpus. CI runs the same tests. See [verification scope](docs/VERIFICATION.md).
 
 ## Explore the project
 
@@ -98,16 +106,17 @@ Publication checks: **97 Python tests and 2 JavaScript tests passed**. Tests use
 | [Research and learning map](learning/Research_and_Learning.md) | Papers, concepts and implementation connections |
 | [Portfolio evidence](docs/PORTFOLIO.md) | Skills, supported resume wording and limitations |
 | [Card-support pilot guide](docs/CARD_SUPPORT_PILOT.md) | Categories, human comparison, timing and data limitations |
+| [Local robustness testing](docs/ROBUSTNESS.md) | Synthetic stress cases, blank label sheet, error analysis and graphs |
 | [Implementation handoff](docs/HANDOFF.md) | Current architecture, frozen experiments and next work |
 | [Third-party terms](THIRD_PARTY.md) | Dataset, model and dependency attribution |
 
-Core code is under `src/intentdesk/`, tests under `tests/`, and recorded aggregate reports/figures under `reports/`. Historical milestone counts and test-exposure statements describe those stages; Milestones 5–7 establish the later state.
+Core code is under `src/intentdesk/`, tests under `tests/`, and recorded aggregate reports/figures under `reports/`. Historical milestone counts and test-exposure statements describe those stages; Milestones 5–8 establish the later state.
 
 ## Limitations and next work
 
 This is a local English research application, not a banking service. The pilot tickets/reference labels are assistant-authored fiction without independent adjudication. The scope check is small and partly uses reused data. Public pretrained-model exposure to benchmark examples cannot be ruled out. Search can time out under its two-second app budget.
 
-Next: complete real human comparison sessions, independently review labels, then seek permissioned representative data and a new untouched joint evaluation. Laya or other models would require a separate fair comparison; they are not integrated here.
+Next: independently review the robustness labels and investigate the recorded failures, complete real human comparison sessions, then seek permissioned representative data and a new untouched joint evaluation. Later model changes require a separate protocol and fresh evaluation. Laya and MiroFish are not integrated here.
 
 ## Authorship and licensing
 
