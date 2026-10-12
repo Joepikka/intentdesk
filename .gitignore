@@ -33,3 +33,5 @@ reports/pilot_comparison.json
 reports/Pilot_Comparison.md
 reports/publication_local.json
 reports/robustness/
+reports/card_v2_runs/
+reports/card_v3_runs/

@@ -18,6 +18,7 @@ IntentDesk demonstrates an applied NLP/ML workflow plus a local inference applic
 | ML application engineering | FastAPI inference, reusable model, SQLite review history, optimistic concurrency, local browser UI and versioned artifacts |
 | Workflow evaluation | A six-category card-support pilot, local category-to-team handoffs, blinded manual trials, assisted trials, fixed timing exclusions and reviewer-level exploratory comparisons |
 | Robustness/error analysis | Sixty versioned synthetic cases, negation/typo/ambiguity slices, confusion matrix, per-class metrics, separate reviewer-declared labels and recorded failures |
+| Iterative ML improvement | Preserved lexical-candidate failure, separate hybrid features/classifier, declared synthetic augmentation, fit-only training and versioned consumed checks |
 | Responsible claims | Frozen encoder disclosure, source/terms preservation, unsupported-request limitation, no production/real-customer savings claim |
 
 The project does **not** currently prove full-transformer fine-tuning, distributed training, generative-model alignment, computer vision, reinforcement learning, production MLOps or customer-facing RAG quality. Add future work only when you have implemented, evaluated and understood it.
@@ -43,6 +44,8 @@ You can also demonstrate the [robustness tool](ROBUSTNESS.md): it found 22 disag
 Add the measured retrieval score from Milestone 4 only with its 100-query development-sample qualification. Do not describe it as a full official leaderboard result. Do not claim you trained the 109M-parameter encoder or used GB of intent labels. Match a job description's terms only when these artifacts and your knowledge support them; keyword stuffing and hidden text do not demonstrate competence.
 
 ## A five-minute demo
+
+The [workflow update](CARD_WORKFLOW_UPDATE.md) adds a lexical candidate that generalized poorly, followed by a frozen-embedding/character hybrid. On a reserved 32-case synthetic check, agreement was 29/32 versus original 21/32. Describe the same-author, unreviewed-label limitation and remaining failures. Do not claim 90.6% real-customer accuracy, a trained foundation model, fully solved negation or independent human benefit. Explain why inspecting the V2 check made it development data for V3 and why later tuning needs a new check.
 
 1. Explain the user problem: help review a short English request, with uncertainty and a person making the decision.
 2. Submit a supported example, inspect the top labels and save a review. Show history and a corrected decision.

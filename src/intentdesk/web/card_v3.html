@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IntentDesk · Card support v3</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/card_v3.css">
+  <script src="/assets/card_v3.js" defer></script>
+</head>
+<body>
+  <header class="app-header"><a class="brand" href="/card-v3">IntentDesk · Card support</a><a href="/">Original review desk</a></header>
+  <main>
+    <div class="page-heading"><div><h1>Understand the request. Review the next step.</h1><p>Six card-support categories, outside-desk requests and clarification.</p></div><span class="mode">Experimental v3 · Local</span></div>
+    <p class="notice"><strong>Demonstration workflow.</strong> Training includes AI-authored examples without human adjudication. Every suggestion needs review. No bank account is accessed or external ticket sent. Use fictional messages.</p>
+    <p id="error" class="error" role="alert" hidden></p>
+    <div class="workspace">
+      <section class="queue-pane" aria-labelledby="queue-title"><div class="section-heading"><h2 id="queue-title">Pending v3 requests</h2><button id="refresh" class="text-button" type="button">Refresh</button></div><div id="queue" class="queue"></div><p class="privacy">The latest 20 pending requests. V3 decisions are stored separately on this PC. Feedback does not automatically retrain a model.</p></section>
+      <div class="work-pane">
+        <section class="composer"><h2>Describe a card issue</h2>
+          <form id="analyze"><label for="request">Request</label><textarea id="request" rows="4" maxlength="4000" required placeholder="My debit card is bent and cracked, and separately I need a new PIN for a different card."></textarea><div class="form-footer"><span>Multiple issues may need clarification. Confirm or correct every suggestion.</span><button id="analyze-button" type="submit">Analyze &amp; add to v3 queue</button></div></form>
+        </section>
+        <section id="detail" class="detail" aria-live="polite" hidden>
+          <span class="request-status">Human review required</span><p id="request-copy" class="request-copy"></p><h2 id="suggestion"></h2><p id="reason" class="field-help"></p>
+          <details><summary>Compare model scores</summary><ul id="scores" class="suggestions"></ul><p class="score-help">Uncalibrated scores compare eight trained categories. They do not prove the suggestion is correct or in scope.</p></details>
+          <form id="review" class="review-form"><label for="decision">Your decision</label><select id="decision" required></select><p class="field-help">Confirm or correct the suggestion. Choose “Needs clarification” for missing context or multiple issues.</p><label for="note">Review note (optional)</label><textarea id="note" maxlength="1000" rows="2"></textarea><div class="review-footer"><p id="saved" class="save-message" role="status"></p><button id="save-button" type="submit">Save human decision</button></div></form>
+          <details class="history"><summary>Decision history</summary><ol id="history"></ol></details>
+        </section>
+      </div>
+    </div>
+    <footer><span>English demonstration · A category suggestion, not a generated answer</span><a href="/pilot">Original human comparison</a></footer>
+  </main>
+</body>
+</html>

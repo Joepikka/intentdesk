@@ -33,6 +33,14 @@ def main() -> None:
     robustness = commands.add_parser("test-robustness", help="Check synthetic development cases without retraining or reopening frozen benchmarks")
     robustness.add_argument("--cases", type=Path)
     robustness.add_argument("--labels", type=Path)
+    commands.add_parser("train-card-v2", help="Train a separate lightweight card workflow from fit data and declared synthetic augmentation")
+    commands.add_parser("evaluate-card-v2", help="Consume one bound synthetic comparison; never reopens original benchmarks")
+    card_v2 = commands.add_parser("card-v2", help="Suggest a card category or clarification using the separate v2 model")
+    card_v2.add_argument("text")
+    commands.add_parser("train-card-v3", help="Train the separate semantic/character hybrid card candidate on CPU")
+    commands.add_parser("evaluate-card-v3", help="Consume the reserved V3 synthetic check once")
+    card_v3 = commands.add_parser("card-v3", help="Suggest a card category with the semantic/character hybrid")
+    card_v3.add_argument("text")
     routing = commands.add_parser("route", help="Recommend an intent route or human review using the frozen policy")
     routing.add_argument("text", help="A request, enclosed in quotes")
     neural_inference = commands.add_parser("predict-neural", help="Suggest intents using the larger local neural head")
@@ -47,7 +55,7 @@ def main() -> None:
         if args.command == "serve":
             if not 1024 <= args.port <= 65535:
                 parser.error("Choose a port between 1024 and 65535.")
-            from intentdesk.app import create_app
+            from intentdesk.app_v3 import create_app
             import uvicorn
             uvicorn.run(create_app(root), host="127.0.0.1", port=args.port, workers=1, access_log=False)
             return
@@ -65,6 +73,24 @@ def main() -> None:
         elif args.command == "test-robustness":
             from intentdesk.robustness import run_suite
             result = run_suite(root, args.cases, args.labels)
+        elif args.command == "train-card-v2":
+            from intentdesk.card_v2 import train_card
+            result = train_card(root)
+        elif args.command == "evaluate-card-v2":
+            from intentdesk.card_v2_eval import evaluate_card
+            result = evaluate_card(root)
+        elif args.command == "card-v2":
+            from intentdesk.card_v2 import CardRouter
+            result = CardRouter(root).route(args.text)
+        elif args.command == "train-card-v3":
+            from intentdesk.card_v3 import train_card
+            result = train_card(root)
+        elif args.command == "evaluate-card-v3":
+            from intentdesk.card_v3_eval import evaluate_card
+            result = evaluate_card(root)
+        elif args.command == "card-v3":
+            from intentdesk.card_v3 import CardRouter
+            result = CardRouter(root).route(args.text)
         elif args.command == "train":
             from intentdesk.train import train
             result = train(root)

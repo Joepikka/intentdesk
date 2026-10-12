@@ -15,6 +15,7 @@ IntentDesk helps a reviewer identify what a request is about and prepare the app
 - **Research demo:** 150 English intent categories, scope advisory, review queue and versioned decision history.
 - **Card-support pilot:** six categories plus outside-desk and clarification choices; 14 fictional tickets per reviewer, balanced between manual and assisted review.
 - **Separate retrieval experiment:** disk-based BM25 search over 8.84 million MS MARCO passages. These research passages are not customer support documentation or verified answers.
+- **Updated card workflow:** a separately trained semantic/character hybrid at `/card-v3`, with its own review queue and a learned clarification category. The original queue and pilot remain preserved.
 
 No account is accessed, no external ticket is sent, and no conversational answer is generated. Review feedback does not automatically retrain a model.
 
@@ -29,10 +30,13 @@ No account is accessed, no external ticket is sent, and no conversational answer
 | Full-corpus retrieval | **MRR@10 0.2195**, mean recall@10 **0.435** | Fixed 100-query official development sample, not leaderboard test |
 | Manual versus assisted pilot | **0 completed human comparisons** at publication | Automated verification excluded; no measured human improvement |
 | Synthetic robustness suite | **38/60 (63.3%)** provisional label agreement; **0/12** clarification cases matched | Assistant-authored development cases, zero human-reviewed labels; not independent accuracy |
+| Updated hybrid card workflow | **54/60** on exposed development cases; **29/32** on a reserved synthetic check, versus original **21/32** | Zero human-reviewed labels; some negation/multiple-issue/outside errors remain; check now consumed |
 
 [Final classifier report](reports/Milestone_05.md) · [Scope limitations](reports/Milestone_06.md) · [Workflow protocol](docs/CARD_SUPPORT_PILOT.md) · [Machine-readable evidence](reports/release_evidence.json)
 
 [Robustness findings](reports/Milestone_08.md) expose typos, negation and ambiguity weaknesses in the current card workflow. The [recorded run](reports/robustness_v1/report.md) preserves its disagreements and confusion matrix. Its task and references differ from the known-intent benchmark above, so the two percentages are not directly comparable.
+
+[The workflow update](docs/CARD_WORKFLOW_UPDATE.md) records the lexical candidate's weak reserved result, the later hybrid comparison and the remaining errors. These improvements are synthetic evidence, not proof of reliability on real customer traffic.
 
 ![Frozen final model comparison and unsupported-request result](reports/figures/milestone_05_final.png)
 
@@ -79,6 +83,8 @@ For the separately trained scope advisory, optional retrieval index and experime
 
 The published final and scope reports are historical consumed evaluations. A fresh checkout is a new experiment, not the original weights. Never tune against the published final results or delete frozen experiment markers to reselect a model. Preserve the evidence before generating new reports.
 
+For the updated card desk, follow [the V3 guide](docs/CARD_WORKFLOW_UPDATE.md). After the original embedding/policy/scope setup, train the separate candidates with `intentdesk train-card-v2` and `intentdesk train-card-v3`. Open `/card-v3` on the running server. The current development instance is served at **http://127.0.0.1:8788/card-v3**. Model weights and local review records remain excluded from GitHub.
+
 ## Verify
 
 ```bash
@@ -95,7 +101,7 @@ uv run --locked --extra neural intentdesk test-robustness
 # After actual review: append --labels local/robustness_labels.csv
 ```
 
-Current local checks (12 October 2026): **108 Python tests and 2 JavaScript tests passed**. Tests use synthetic fixtures and do not require model weights or the large corpus. CI runs the same tests. See [verification scope](docs/VERIFICATION.md).
+Current local checks (12 October 2026): **130 Python tests and 2 JavaScript tests passed**. Tests use synthetic fixtures and do not require model weights or the large corpus. CI runs the same tests. See [verification scope](docs/VERIFICATION.md).
 
 ## Explore the project
 
@@ -107,10 +113,11 @@ Current local checks (12 October 2026): **108 Python tests and 2 JavaScript test
 | [Portfolio evidence](docs/PORTFOLIO.md) | Skills, supported resume wording and limitations |
 | [Card-support pilot guide](docs/CARD_SUPPORT_PILOT.md) | Categories, human comparison, timing and data limitations |
 | [Local robustness testing](docs/ROBUSTNESS.md) | Synthetic stress cases, blank label sheet, error analysis and graphs |
+| [Updated hybrid workflow](docs/CARD_WORKFLOW_UPDATE.md) | Trained candidates, preserved comparisons, new review desk and remaining errors |
 | [Implementation handoff](docs/HANDOFF.md) | Current architecture, frozen experiments and next work |
 | [Third-party terms](THIRD_PARTY.md) | Dataset, model and dependency attribution |
 
-Core code is under `src/intentdesk/`, tests under `tests/`, and recorded aggregate reports/figures under `reports/`. Historical milestone counts and test-exposure statements describe those stages; Milestones 5–8 establish the later state.
+Core code is under `src/intentdesk/`, tests under `tests/`, and recorded aggregate reports/figures under `reports/`. Historical milestone counts and test-exposure statements describe those stages; Milestones 5–9 establish the later state.
 
 ## Limitations and next work
 

@@ -1,12 +1,12 @@
 # IntentDesk implementation handoff
 
-Version 1.8, 12 October 2026. Local CPU project for a beginner BTech AI/ML student graduating June 2027, targeting applied ML/AI engineering. The user requires this PC only and a free runtime. No paid model API or cloud service is required.
+Version 1.9, 12 October 2026. Local CPU project for a beginner BTech AI/ML student graduating June 2027, targeting applied ML/AI engineering. The user requires this PC only and a free runtime. No paid model API or cloud service is required.
 
 ## Current result
 
 The project contains reproducible data preparation, lexical and frozen-encoder model comparisons, small/large PyTorch heads, temperature calibration, independently checked abstention, a review application and full-corpus lexical search. See README and Milestones 4–6 for measured current results. Earlier milestones are historical evidence, not current test-exposure declarations.
 
-Current verification: 108 Python tests and 2 JavaScript regression tests pass. Earlier actual-model HTTP checks, browser save/search checks and wheel asset inclusion passed. The preselected classifier reached 96.24% known-intent final accuracy. Retrieval MRR@10 is 0.2195 on the fixed 100-query development sample. The original scope review used bounded 632px/390px evidence. For the pilot, valid full-page captures at 1280px, 1920px and 390px are available, and its UI finish review returned ship. That design verdict does not establish human benefit or production reliability.
+Current verification: 130 Python tests and 2 JavaScript regression tests pass. Earlier actual-model HTTP checks, browser save/search checks and wheel asset inclusion passed. The preselected classifier reached 96.24% known-intent final accuracy. Retrieval MRR@10 is 0.2195 on the fixed 100-query development sample. The original scope review used bounded 632px/390px evidence. For the pilot, valid full-page captures at 1280px, 1920px and 390px are available, and its UI finish review returned ship. That design verdict does not establish human benefit or production reliability.
 
 [Milestone 8](../reports/Milestone_08.md) adds `robustness-template` and `test-robustness`: a free, offline stress test of the existing pilot suggestion projection. Sixty assistant-authored cases produced 38/60 provisional label agreement, two outside-to-supported errors out of 12, and zero correct clarification suggestions out of 12. No human labels were supplied. This is development error analysis, not independent accuracy or a human pilot. Typos, negation and multiple issues remain weaknesses. The tool records a confusion matrix, per-category/tag metrics, runtime errors and sequential latency; it never trains or changes thresholds. See [instructions](ROBUSTNESS.md) and the [preserved aggregate snapshot](../reports/robustness_v1/report.md). Raw exports and reviewer notes remain ignored locally. Original consumed evaluations and pilot/application sources were preserved byte-for-byte. No MiroFish or cloud dependency was added.
 
@@ -21,6 +21,10 @@ Current checks are recorded in [scope verification](VERIFICATION.md). The older 
 The app suggests intents and records decisions. The unsupported-request policy failed development checks, so **all requests require review**. It performs no external actions. The search corpus is an independent non-commercial research benchmark, not support documentation. There is no generated-answer feature or production deployment.
 
 ## Run and verify
+
+[Milestone 9](../reports/Milestone_09.md) adds lexical V2 and semantic/character hybrid V3 models trained only on audited fit data plus declared synthetic augmentation. V2 scored 30/48 on its reserved synthetic check with worse outside errors; the result is preserved. That check was inspected and became V3 development data. V3 scored 54/60, 42/48 and 29/32 on a separate reserved synthetic check, versus original 38/60, 28/48 and 21/32. All labels remain AI-authored and human-unreviewed. All checks are now consumed. These results do not establish independent real-traffic performance. Negation, multiple issues and unrelated replacement deliveries still fail in some examples.
+
+The hybrid workflow runs at `/card-v3` through the separate `app_v3.py` wrapper with its own `local/card_v3_reviews.sqlite3` database and original encoder shared in memory. The development server uses port 8788. Original app/pilot sources and browser assets remain byte-identical, preserving the original pilot binding/history. V3 reviews do not create human pilot sessions. New commands: `train-card-v2`, `evaluate-card-v2`, `card-v2`, `train-card-v3`, `evaluate-card-v3`, `card-v3`. The [update guide](CARD_WORKFLOW_UPDATE.md) records preparation, source/data binding, cache resume, operating assumptions and remaining errors. Current checks pass 130 Python and 2 JavaScript tests. AI consistency review stays separate from blank human label sheets.
 
 From the directory containing `pyproject.toml`:
 

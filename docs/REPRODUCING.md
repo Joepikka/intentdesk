@@ -122,7 +122,7 @@ Completed expansion: [Milestone 2 — measured results and resource use](../repo
 
 ## Calibrated review recommendations
 
-The audit/calibration milestone recorded **48 tests**. The current release passes **97 Python tests plus 2 JavaScript regression tests**. [Milestone 3](../reports/Milestone_03.md) records the cache/input fixes, data-quality review, calibration result and failed routing gate. [The calibration lesson](../learning/Calibration_and_Review.md) explains the mathematics and split discipline.
+The audit/calibration milestone recorded **48 tests**. The current release passes **130 Python tests plus 2 JavaScript regression tests**. [Milestone 3](../reports/Milestone_03.md) records the cache/input fixes, data-quality review, calibration result and failed routing gate. [The calibration lesson](../learning/Calibration_and_Review.md) explains the mathematics and split discipline.
 
 ```powershell
 uv run --locked --extra neural intentdesk build-policy
