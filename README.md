@@ -1,10 +1,10 @@
 # IntentDesk
 
-**Local NLP support triage with calibrated ML suggestions and human review.**
+**Local NLP intent review and large-data customer-feedback ML experiments.**
 
 IntentDesk helps a reviewer identify what a request is about and prepare the appropriate team handoff. It includes reproducible model comparisons, evaluation reports, a Python API, a browser interface and a card-support demonstration. It runs on CPU without paid model APIs.
 
-> Student portfolio project, developed with AI coding assistance. The encoder is pretrained and frozen; downstream classifiers and neural heads were trained locally. All requests require human review. Customer savings and production reliability have not been established.
+> Student portfolio project, developed with AI coding assistance. The card workflow uses frozen pretrained MPNet features. The separate feedback lab trains word transformers from random initialization and compares classical supervised/unsupervised methods. Outputs require interpretation and human review. Customer savings and production reliability have not been established.
 
 ![Card-support demonstration: model suggestion awaiting a human decision](docs/assets/pilot-assisted.jpg)
 
@@ -16,6 +16,9 @@ IntentDesk helps a reviewer identify what a request is about and prepare the app
 - **Card-support pilot:** six categories plus outside-desk and clarification choices; 14 fictional tickets per reviewer, balanced between manual and assisted review.
 - **Separate retrieval experiment:** disk-based BM25 search over 8.84 million MS MARCO passages. These research passages are not customer support documentation or verified answers.
 - **Updated card workflow:** a separately trained semantic/character hybrid at `/card-v3`, with its own review queue and a learned clarification category. The original queue and pilot remain preserved.
+- **Large-data feedback ML lab:** pinned 1.98 GB of public reviews, product-disjoint fit/development/test partitions, classical rating classifiers, numeric regression, clustering, full-fit streaming learning and custom transformers trained from scratch. Review stars are a separate target from support intents. See [the lab guide](docs/FEEDBACK_ML_LAB.md).
+
+The feedback lab completed **20 epochs for each scratch transformer** and both final evaluations. The original preselected streaming classifier scored **70.37% accuracy / 0.5427 macro-F1** on its original check. On a separate fresh product-group sample, the development-selected word/character model scored **69.13% / 0.5591**, versus the original model on that same sample at **67.955% / 0.5487**. The app uses the verified improvement and displays both comparisons separately. **90% accuracy was not achieved.** See [the completed follow-up](reports/Milestone_11.md).
 
 No account is accessed, no external ticket is sent, and no conversational answer is generated. Review feedback does not automatically retrain a model.
 
@@ -31,6 +34,8 @@ No account is accessed, no external ticket is sent, and no conversational answer
 | Manual versus assisted pilot | **0 completed human comparisons** at publication | Automated verification excluded; no measured human improvement |
 | Synthetic robustness suite | **38/60 (63.3%)** provisional label agreement; **0/12** clarification cases matched | Assistant-authored development cases, zero human-reviewed labels; not independent accuracy |
 | Updated hybrid card workflow | **54/60** on exposed development cases; **29/32** on a reserved synthetic check, versus original **21/32** | Zero human-reviewed labels; some negation/multiple-issue/outside errors remain; check now consumed |
+| Feedback lab: streaming_sgd (preselected) | **70.37% accuracy, 0.5427 macro-F1**, 20,000 product-disjoint review-rating test examples | Separate subjective-rating task; 100,000 balanced fit examples for controlled candidates, 2,912,393 for streaming; final test now consumed |
+| Feedback improvement: word/character SGD (preselected) | **69.13% accuracy, 0.5591 macro-F1**, versus original **67.955% / 0.5487** on the same fresh 20,000-review check | Excludes all previously tested products; a different population from the original check; no test reselection |
 
 [Final classifier report](reports/Milestone_05.md) · [Scope limitations](reports/Milestone_06.md) · [Workflow protocol](docs/CARD_SUPPORT_PILOT.md) · [Machine-readable evidence](reports/release_evidence.json)
 
@@ -40,9 +45,11 @@ No account is accessed, no external ticket is sent, and no conversational answer
 
 ![Frozen final model comparison and unsupported-request result](reports/figures/milestone_05_final.png)
 
+[The large-data lab report](reports/Milestone_10.md) preserves every final candidate, numeric regression, clustering diagnostics and actual learning curves. It uses **4,629,544 source reviews / 1.98 GB** and trains custom scratch transformers with **1,318,021** and **2,966,533** trainable parameters. Dataset size and model size do not guarantee better results or business benefit.
+
 ## What the repository demonstrates
 
-Python, NumPy, scikit-learn, PyTorch, NLP, TF-IDF, transfer learning, neural network training, ReLU, dropout, cross-entropy, AdamW, temperature calibration, data leakage checks, macro-F1, error analysis, out-of-scope detection, FastAPI, SQLite, BM25 and automated testing.
+Python, NumPy, scikit-learn, PyTorch, NLP, TF-IDF, transfer learning, logistic/linear regression, SVM, decision trees, random forests, KNN, SVD, MiniBatchKMeans, streaming learning, neural training, custom multi-head attention, ReLU/GELU, dropout, cross-entropy, AdamW, calibration, data leakage checks, macro-F1, error analysis, out-of-scope detection, FastAPI, SQLite, BM25 and automated testing.
 
 The project compares a majority baseline, word/character TF-IDF logistic regression, a linear classifier on frozen MPNet embeddings, and small/large PyTorch heads. The encoder has approximately **109 million frozen parameters**. The trained heads have **117,782** and **1,389,206** parameters. It does not demonstrate training a foundation model, reinforcement learning, computer vision or production deployment.
 
@@ -85,6 +92,17 @@ The published final and scope reports are historical consumed evaluations. A fre
 
 For the updated card desk, follow [the V3 guide](docs/CARD_WORKFLOW_UPDATE.md). After the original embedding/policy/scope setup, train the separate candidates with `intentdesk train-card-v2` and `intentdesk train-card-v3`. Open `/card-v3` on the running server. The current development instance is served at **http://127.0.0.1:8788/card-v3**. Model weights and local review records remain excluded from GitHub.
 
+The feedback lab can run independently of the original intent artifacts:
+
+```bash
+uv run --locked intentdesk prepare-feedback
+uv run --locked --extra neural intentdesk train-feedback
+uv run --locked --extra neural intentdesk evaluate-feedback
+uv run --locked --extra neural --extra web intentdesk serve-feedback --port 8790
+```
+
+Open **http://127.0.0.1:8790/ml-lab**. Preparation downloads two complete pinned review subsets; training/checkpointing takes time on CPU. The lab's original product-disjoint test becomes consumed after evaluation. Preserve it and use fresh data for any later model selection. See [protocol, limitations and commands](docs/FEEDBACK_ML_LAB.md).
+
 ## Verify
 
 ```bash
@@ -101,7 +119,7 @@ uv run --locked --extra neural intentdesk test-robustness
 # After actual review: append --labels local/robustness_labels.csv
 ```
 
-Current local checks (12 October 2026): **130 Python tests and 2 JavaScript tests passed**. Tests use synthetic fixtures and do not require model weights or the large corpus. CI runs the same tests. See [verification scope](docs/VERIFICATION.md).
+Current local checks (14 October 2026): **162 Python tests and 2 JavaScript tests passed**. Tests use synthetic fixtures and do not require model weights or the large corpus. CI runs the same tests. See [verification scope](docs/VERIFICATION.md).
 
 ## Explore the project
 
@@ -114,10 +132,13 @@ Current local checks (12 October 2026): **130 Python tests and 2 JavaScript test
 | [Card-support pilot guide](docs/CARD_SUPPORT_PILOT.md) | Categories, human comparison, timing and data limitations |
 | [Local robustness testing](docs/ROBUSTNESS.md) | Synthetic stress cases, blank label sheet, error analysis and graphs |
 | [Updated hybrid workflow](docs/CARD_WORKFLOW_UPDATE.md) | Trained candidates, preserved comparisons, new review desk and remaining errors |
+| [Large-data feedback ML lab](docs/FEEDBACK_ML_LAB.md) | Supervised classification/regression, clustering and scratch transformers |
+| [Completed feedback improvement](docs/FEEDBACK_V2.md) | Fresh product groups, class-weight tradeoffs and verified app integration |
+| [ML lab exercises](learning/ML_Lab_Exercises.md) | Attention mathematics, model tradeoffs, leakage and your own demonstrations |
 | [Implementation handoff](docs/HANDOFF.md) | Current architecture, frozen experiments and next work |
 | [Third-party terms](THIRD_PARTY.md) | Dataset, model and dependency attribution |
 
-Core code is under `src/intentdesk/`, tests under `tests/`, and recorded aggregate reports/figures under `reports/`. Historical milestone counts and test-exposure statements describe those stages; Milestones 5–9 establish the later state.
+Core code is under `src/intentdesk/`, tests under `tests/`, and recorded aggregate reports/figures under `reports/`. Historical milestone counts and test-exposure statements describe those stages; Milestones 5–11 establish the later state.
 
 ## Limitations and next work
 

@@ -78,4 +78,6 @@ def create_app(root: Path, router_factory=None, database=None, card_factory=None
         except ReviewConflict as error:
             raise HTTPException(409, str(error)) from None
 
+    from intentdesk.feedback_web import install
+    install(app, root)
     return app

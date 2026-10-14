@@ -41,6 +41,14 @@ def main() -> None:
     commands.add_parser("evaluate-card-v3", help="Consume the reserved V3 synthetic check once")
     card_v3 = commands.add_parser("card-v3", help="Suggest a card category with the semantic/character hybrid")
     card_v3.add_argument("text")
+    commands.add_parser("prepare-feedback", help="Download pinned large public reviews and create product-disjoint audited partitions")
+    commands.add_parser("train-feedback", help="Train classical ML, full-fit streaming model, clustering and scratch transformers")
+    commands.add_parser("extend-feedback", help="Preserve an unexposed run, resume scratch models for 20–30 total epochs, then evaluate once")
+    commands.add_parser("evaluate-feedback", help="Consume one final product-disjoint feedback benchmark; never reselect using test")
+    feedback_predict = commands.add_parser("feedback-predict", help="Predict public-review stars and exploratory group; not support intent")
+    feedback_predict.add_argument("text")
+    feedback_server = commands.add_parser("serve-feedback", help="Serve the standalone local feedback lab without loading original intent models")
+    feedback_server.add_argument("--port", type=int, default=8790)
     routing = commands.add_parser("route", help="Recommend an intent route or human review using the frozen policy")
     routing.add_argument("text", help="A request, enclosed in quotes")
     neural_inference = commands.add_parser("predict-neural", help="Suggest intents using the larger local neural head")
@@ -52,10 +60,13 @@ def main() -> None:
     if not (root / "pyproject.toml").is_file() or not (root / "src" / "intentdesk").is_dir():
         parser.error("Run this command from the IntentDesk project directory.")
     try:
-        if args.command == "serve":
+        if args.command in {"serve", "serve-feedback"}:
             if not 1024 <= args.port <= 65535:
                 parser.error("Choose a port between 1024 and 65535.")
-            from intentdesk.app_v3 import create_app
+            if args.command == "serve-feedback":
+                from intentdesk.feedback_web import create_lab_app as create_app
+            else:
+                from intentdesk.app_v3 import create_app
             import uvicorn
             uvicorn.run(create_app(root), host="127.0.0.1", port=args.port, workers=1, access_log=False)
             return
@@ -91,6 +102,29 @@ def main() -> None:
         elif args.command == "card-v3":
             from intentdesk.card_v3 import CardRouter
             result = CardRouter(root).route(args.text)
+        elif args.command == "prepare-feedback":
+            from intentdesk.feedback_data import prepare
+            result = prepare(root)
+        elif args.command == "train-feedback":
+            from intentdesk.feedback_lab import train, training_lock
+            with training_lock(root):
+                result = train(root)
+        elif args.command == "extend-feedback":
+            from intentdesk.feedback_lab import start_extension, train, training_lock
+            from intentdesk.feedback_eval import evaluate
+            with training_lock(root):
+                extension = start_extension(root)
+                print(json.dumps(extension, indent=2), flush=True)
+                train(root)
+                result = evaluate(root)
+        elif args.command == "evaluate-feedback":
+            from intentdesk.feedback_eval import evaluate
+            from intentdesk.feedback_lab import training_lock
+            with training_lock(root):
+                result = evaluate(root)
+        elif args.command == "feedback-predict":
+            from intentdesk.feedback_predict import FeedbackModels
+            result = FeedbackModels(root).analyze(args.text)
         elif args.command == "train":
             from intentdesk.train import train
             result = train(root)

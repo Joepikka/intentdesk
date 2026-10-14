@@ -1,6 +1,6 @@
 # Reproduction reference and historical experiment context
 
-Start with the current [public README](../README.md). The longer command reference below preserves milestone context; later Milestones 5–7 supersede earlier prospective status. Models, caches and local databases are not published.
+Start with the current [public README](../README.md). The longer command reference below preserves milestone context; later Milestones 5–11 supersede earlier prospective status. Models, caches and local databases are not published.
 
 ## Fresh clone versus the original experiment
 
@@ -20,7 +20,7 @@ Returning to the project? Begin with [Start here](START_HERE.md) for the demo an
 
 **Concrete workflow:** open **http://127.0.0.1:8765/pilot** for the card-support demonstration. Review 14 fictional tickets, compare manual categorization with ML suggestions, and prepare local category-to-team handoffs. Six card categories, outside-desk handling and clarification make the scope explicit. No bank system is connected. The automated verification run is excluded from human results; **zero completed human comparisons means no measured human benefit yet**. See [the pilot guide](CARD_SUPPORT_PILOT.md) and [Milestone 7](../reports/Milestone_07.md).
 
-Current verification: **97 Python tests and 2 JavaScript regression tests pass**. With the app running, export the human-comparison report using `uv run --locked intentdesk pilot-report`. The pilot stores its sessions separately in `local/pilot.sqlite3`; original review history is preserved. Reports disclose fictional provenance, interruptions, model wait time and excluded automated sessions.
+Historical pilot-stage verification: **97 Python tests and 2 JavaScript regression tests passed**. With the app running, export the human-comparison report using `uv run --locked intentdesk pilot-report`. The pilot stores its sessions separately in `local/pilot.sqlite3`; original review history is preserved. Reports disclose fictional provenance, interruptions, model wait time and excluded automated sessions.
 
 **Current scope: a free local ML review app with calibrated intent suggestions, SQLite decision history and full-corpus BM25 search.** The final frozen classifier reached **96.24% accuracy on 4,500 known-intent test requests**. Its unsupported-request policy failed, so every request requires review. No external action is executed. Search uses the separate MS MARCO research corpus; it is not a support knowledge base or a generated-answer feature.
 
@@ -152,3 +152,11 @@ The dataset is crowdsourced English assistant requests, not actual customer tick
 
 Scope example: `report_lost_card` is supported; password reset is not an intent in this dataset. A password-reset request may still receive a wrong known-label suggestion. The separate scope advisory is implemented, but automatic routing remains disabled because its small, partly reused check does not establish independent joint performance.
 
+
+## Completed large-data feedback releases
+
+For the current completed review-rating experiments, use [the lab guide](FEEDBACK_ML_LAB.md) and [bounded improvement protocol](FEEDBACK_V2.md). The first release compares nine classifiers, linear regression, clustering and two scratch transformers trained for 20 epochs. The second trains two word/character SGD weighting variants on the full fit population and compares them with fixed original/prior-adjustment controls on previously untested product groups. Both checks are now consumed.
+
+From the repository root after the original feedback preparation/training/evaluation, run `uv run --locked --extra neural python scripts/run_feedback_v2_job.py`. Start the independent app with `uv run --locked --extra neural --extra web intentdesk serve-feedback --port 8790`. Raw data and weights are excluded, so fresh clones must prepare/train locally. The verified release wrapper uses V2 when its completed, bound result selects a real development improvement; otherwise it retains the original release.
+
+Current software checks pass 162 Python tests and 2 JavaScript tests. Original intent/card artifacts and consumed experiments remain preserved. Do not tune against either published final rating check; a next model needs separate source/protocol and genuinely untouched evaluation groups. See Milestones 10–11 and the verification guide for measured results and limits.

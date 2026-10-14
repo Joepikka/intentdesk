@@ -4,6 +4,10 @@ This is an implementation and learning map, not a claim that every feature exist
 
 ## How we find and choose research
 
+The 13 October expansion adds a separate [large-data feedback lab](../docs/FEEDBACK_ML_LAB.md) and [practical exercises](ML_Lab_Exercises.md). It implements linear regression, SVM, trees, forests, KNN, streaming SGD, SVD, MiniBatchKMeans and custom word transformers trained from random initialization. The original frozen-MPNet experiment below remains preserved. Review stars are not support intents, and the newer task does not establish better card routing. A reproducible GitHub Actions workflow is now implemented; the older stage descriptions below are historical.
+
+The custom attention implementation is informed by Vaswani et al., [*Attention Is All You Need*](https://arxiv.org/abs/1706.03762). The paper's primary metadata/abstract was checked for this addition. Our compact supervised encoder classifier is a local adaptation, not a reproduction of the translation experiments or a pretrained foundation model. Its mathematical and software checks are described in the lab guide.
+
 Current scope extension: [Milestone 6](../reports/Milestone_06.md) and [Scope Detection](Scope_Detection.md) connect cosine similarity, neighbor reference separation, feature standardization, sigmoid/binary cross-entropy, class weighting, regularization and exact binomial uncertainty to an implemented detector. The original encoder/classifier stay frozen. This adds a research advisory; it does not establish a fresh independent joint test or authorize actions. Its check is now consumed.
 
 Start with the engineering question: for example, how can we detect unsupported requests, or measure whether a confidence score is trustworthy? Search relevant terms in ACL Anthology (NLP), PMLR/ICML, NeurIPS proceedings, OpenReview and arXiv. Scholar or Semantic Scholar can help locate a work; verify the actual paper on its primary publication page. Distinguish peer-reviewed papers from preprints. Follow references and later papers when they address the same problem.
