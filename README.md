@@ -2,6 +2,8 @@
 
 **Local NLP intent review and large-data customer-feedback ML experiments.**
 
+Current follow-up: a [bounded rating-error investigation](docs/FEEDBACK_V3.md) is training locally. Existing published results below remain unchanged; no new accuracy improvement or 90% result is claimed while it runs.
+
 IntentDesk helps a reviewer identify what a request is about and prepare the appropriate team handoff. It includes reproducible model comparisons, evaluation reports, a Python API, a browser interface and a card-support demonstration. It runs on CPU without paid model APIs.
 
 > Student portfolio project, developed with AI coding assistance. The card workflow uses frozen pretrained MPNet features. The separate feedback lab trains word transformers from random initialization and compares classical supervised/unsupervised methods. Outputs require interpretation and human review. Customer savings and production reliability have not been established.

@@ -1,5 +1,9 @@
 # IntentDesk implementation handoff
 
+## New user-requested investigation — October 14, 2026
+
+After the completed V2 delivery, the user requested correction of errors and investigation of accuracy below 90%. [The V3 protocol](FEEDBACK_V3.md) records fit/development diagnosis and a bounded fit-only IDF/weighting experiment. V3 training has been launched; its actual fresh evaluation, verification and delivery remain pending. Completion statements below describe the previous delivered release. Do not edit bound V1/V2/V3 model sources or reuse consumed tests to tune this experiment. The expanded software suite now passes 169 Python tests; this is not a new model-accuracy result.
+
 Version 2.1, 14 October 2026. Local CPU project for a beginner BTech AI/ML student graduating June 2027, targeting applied ML/AI engineering. The user requires this PC only and a free runtime. No paid model API or cloud service is required.
 
 ## Current result

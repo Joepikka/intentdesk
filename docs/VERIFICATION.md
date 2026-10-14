@@ -1,5 +1,9 @@
 # Publication verification scope
 
+## New rating investigation: pre-training verification, October 14, 2026
+
+The separately versioned [V3 experiment](FEEDBACK_V3.md) passed the full **169-test Python suite** before launch (one existing Starlette/httpx deprecation warning). Seven new tests exercise markup/entity cleanup, document-frequency math, sparse normalization, the selection guard, stable streaming/resume ordering, exclusion of whole products from both consumed checks, real toy training/reload/final exposure and changed-source refusal. All 16 protected original files remain byte-identical. Publication scanning found no credentials, private model/data artifacts or broken documentation links. Actual V3 training/evaluation and release verification remain pending; earlier completion records below refer to the previously delivered V2 release.
+
 On 10 October 2026 the local full suite passed **97 Python tests** and **2 JavaScript tests**. The suites use synthetic fixtures: they check split hygiene, training/backpropagation on toy data, cache/input contracts, frozen experiment protection, calibration, scope features, request boundaries, review history, stale saves, retrieval behavior and pilot allocation/measurement rules. They do not establish customer benefit.
 
 The actual locally trained model and browser review flow were also checked. An explicitly marked automated pilot session saved 14 decisions and prepared local handoffs; manual trials hid suggestions and repeated saves returned 409. Completed human comparisons remained **zero**. Automated decisions and elapsed times are excluded from human-effect metrics.
