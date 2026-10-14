@@ -19,7 +19,7 @@ def runner(tmp_path,monkeypatch):
 
 def test_unattended_job_saves_completed_status_and_actual_result(tmp_path,monkeypatch):
     module=runner(tmp_path,monkeypatch)
-    monkeypatch.setattr(module,"evaluate",lambda root:{"selected_classifier":"fixture", 
+    monkeypatch.setattr(module,"evaluate",lambda root:{"selected_classifier":"fixture",
         "classification":{"fixture":{"accuracy":.7,"macro_f1":.6}}})
     module.main()
     status=json.loads((tmp_path/"local/feedback_job/status.json").read_text())
