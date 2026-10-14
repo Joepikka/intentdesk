@@ -1,5 +1,9 @@
 # IntentDesk implementation handoff
 
+## Active user-approved semantic/ordinal pilot
+
+The user approved [Semantic S1 ordered-rating comparisons](FEEDBACK_SEMANTIC.md) after the completed V3 delivery. This bounded pilot uses 20,000 identical fit reviews, unused development/calibration/test product groups, a pinned 22.7M-parameter MiniLM encoder, controlled linear/nominal/ordinal comparisons, and one conditional last-block adaptation subject to resource/development guards. It queues behind the separately running lexical V4 30-epoch job using a lightweight shared-lock waiter. The two final product cohorts are disjoint; neither job modifies the other. Earlier completion statements below refer to V3. The app retains V2 while the new work runs. Model results, real-human audit/pilot work and final delivery are not yet complete. Preserve all frozen sources and consumed tests.
+
 ## New user-requested investigation — October 14, 2026
 
 The bounded V3 experiment has completed three epochs and its fresh 20,000-review product-group evaluation. Its best balanced-IDF development macro-F1 improved by only .000712 over V2, below the declared .005 promotion threshold, so the application retains V2. On the new check, retained V2 scored 67.55% accuracy / .5486 macro-F1; balanced IDF scored 67.82% / .5597 and moderate IDF 72.375% / .5518. These fresh-check outcomes did not change selection. [Milestone 12](../reports/Milestone_12.md) preserves all outcomes and the byte-identical aggregate snapshot; [learning notes](FEEDBACK_V3_LEARNING.md) explain the mathematics. All three rating checks are consumed. Model/source/data reload checks, actual HTTP/browser predictions and 47-file wheel parity passed. The 169-test suite remains current. Source and qualified aggregate evidence are delivered through the existing GitHub repository; no further accuracy-chasing experiment is scheduled. Human/customer validation remains pending.

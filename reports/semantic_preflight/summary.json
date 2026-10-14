@@ -1,0 +1,93 @@
+{
+  "stage": "preflight snapshot, not a trained-model result",
+  "run_id": "feedback_semantic_20261014T064628337312Z",
+  "state_at_snapshot": "queued",
+  "data": {
+    "previous_development_products": 6484,
+    "previous_test_products": 45851,
+    "concurrent_reservation": {
+      "run_id": "feedback_v4_20261014T063543255866Z",
+      "sha256": "6e73d66290ab883383c846a5a79fb77b10b2efffba685bc583123fa315579a26",
+      "products": 18277
+    },
+    "concurrent_product_overlap": 0,
+    "previous_markers": {
+      "v1": "e44e90b96be800e8effc59575180327b4661e49b4bbc151a07f1aa0e59b6b144",
+      "v2": "112cd0ddb0af3f8e20c65dee51446a128a693c4ce21a0b993fe52573a6c86276",
+      "v3": "2a215cc3158fa8f949deb63bcb2c204ccfcdb303d152c6b1c30c035fa211be4b"
+    },
+    "partitions": {
+      "fit": {
+        "rows": 20000,
+        "products": 14597,
+        "rating_counts": {
+          "5": 12218,
+          "4": 2467,
+          "1": 2527,
+          "3": 1630,
+          "2": 1158
+        },
+        "sha256": "54f6882faa48a2705b79ef457e016991ba9a997dd8a4a74cbb8e8811ca89c2ea"
+      },
+      "development": {
+        "rows": 5000,
+        "products": 4651,
+        "rating_counts": {
+          "5": 2838,
+          "3": 494,
+          "4": 650,
+          "1": 689,
+          "2": 329
+        },
+        "sha256": "7d20b5f090d114f490559cfd2bfcd435de06868c72243d2ec727ce84548d9c1c"
+      },
+      "calibration": {
+        "rows": 5000,
+        "products": 4711,
+        "rating_counts": {
+          "5": 2806,
+          "4": 688,
+          "3": 493,
+          "1": 679,
+          "2": 334
+        },
+        "sha256": "5ce0c5d9d9cbc2f3608245bd778944b8698b8fefab84d7a6d2ea977dc2365a5c"
+      },
+      "test": {
+        "rows": 20000,
+        "products": 18097,
+        "rating_counts": {
+          "1": 2845,
+          "5": 10902,
+          "4": 2687,
+          "2": 1514,
+          "3": 2052
+        },
+        "sha256": "e373bbc9f24f8407f44db33a585b493f2c1e2bcad9fd6be874c516ef56079a23"
+      }
+    },
+    "product_overlap": 0,
+    "selection": "First eligible review hashes; natural class distribution; all fit candidates share identical rows",
+    "limitations": "Excluding used groups shifts toward less-reviewed products; not user/temporal/semantic-near-duplicate independence"
+  },
+  "encoder_resource_probe": {
+    "seconds_including_download": 10.763403499964625,
+    "rss_bytes": 473481216,
+    "available_bytes": 797196288,
+    "parameters": 22713216,
+    "shape": [
+      8,
+      384
+    ],
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+  },
+  "scope_python_tests_passed": 185,
+  "preserved_original_files": 16,
+  "human_audit": {
+    "prepared": 200,
+    "completed_human_rows": 0,
+    "scope": "Fit-only blinded exercise; no human labels fabricated; not an evaluation-label rewrite"
+  },
+  "automatic_actions": false,
+  "accuracy_result_available": false
+}
