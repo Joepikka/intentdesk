@@ -14,5 +14,6 @@ Implemented code is project evidence, not proof that its author mastered every c
 10. Explain why full-fit streaming and bounded-sample model scores are not isolated algorithm comparisons. Design a fair same-budget follow-up with a new protocol.
 11. Interpret class supports, errors and remaining leakage limits before quoting aggregate scores.
 12. Make a new-version change with a hypothesis, training-only implementation, development selection, frozen choice and untouched final evaluation. Record negative findings too.
+13. Explain the actual [V3 outcome](../reports/Milestone_12.md): why did a development macro-F1 gain of .000712 fail a .005 guard, and why did better fresh-check scores not authorize replacing V2? Derive fit-only document frequency and normalized class weights from [the learning notes](../docs/FEEDBACK_V3_LEARNING.md). Distinguish fixing formatting/resource issues from demonstrating an accuracy improvement.
 
 A useful demonstration includes your own explanation and a small working modification. Dataset bytes, model size and passing tests do not substitute for understanding.

@@ -2,7 +2,7 @@
 
 **Local NLP intent review and large-data customer-feedback ML experiments.**
 
-Current follow-up: a [bounded rating-error investigation](docs/FEEDBACK_V3.md) is training locally. Existing published results below remain unchanged; no new accuracy improvement or 90% result is claimed while it runs.
+The [bounded rating-error investigation](docs/FEEDBACK_V3.md) completed three training passes and a fresh evaluation. Neither new candidate met the predeclared development promotion rule, so the app retains V2. All outcomes, including the negative selection result, are preserved in [Milestone 12](reports/Milestone_12.md). **90% rating accuracy was not achieved.**
 
 IntentDesk helps a reviewer identify what a request is about and prepare the appropriate team handoff. It includes reproducible model comparisons, evaluation reports, a Python API, a browser interface and a card-support demonstration. It runs on CPU without paid model APIs.
 
@@ -38,6 +38,7 @@ No account is accessed, no external ticket is sent, and no conversational answer
 | Updated hybrid card workflow | **54/60** on exposed development cases; **29/32** on a reserved synthetic check, versus original **21/32** | Zero human-reviewed labels; some negation/multiple-issue/outside errors remain; check now consumed |
 | Feedback lab: streaming_sgd (preselected) | **70.37% accuracy, 0.5427 macro-F1**, 20,000 product-disjoint review-rating test examples | Separate subjective-rating task; 100,000 balanced fit examples for controlled candidates, 2,912,393 for streaming; final test now consumed |
 | Feedback improvement: word/character SGD (preselected) | **69.13% accuracy, 0.5591 macro-F1**, versus original **67.955% / 0.5487** on the same fresh 20,000-review check | Excludes all previously tested products; a different population from the original check; no test reselection |
+| Bounded IDF experiment: retained V2 control | **67.55% accuracy, 0.5486 macro-F1** on a third 20,000-review check; balanced IDF **67.82% / 0.5597**, moderate IDF **72.375% / 0.5518** | Both new models failed the development promotion rule; V2 retained before testing. Excludes all products from both earlier checks; different population, no test reselection |
 
 [Final classifier report](reports/Milestone_05.md) · [Scope limitations](reports/Milestone_06.md) · [Workflow protocol](docs/CARD_SUPPORT_PILOT.md) · [Machine-readable evidence](reports/release_evidence.json)
 

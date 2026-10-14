@@ -2,9 +2,9 @@
 
 ## New user-requested investigation — October 14, 2026
 
-After the completed V2 delivery, the user requested correction of errors and investigation of accuracy below 90%. [The V3 protocol](FEEDBACK_V3.md) records fit/development diagnosis and a bounded fit-only IDF/weighting experiment. V3 training has been launched; its actual fresh evaluation, verification and delivery remain pending. Completion statements below describe the previous delivered release. Do not edit bound V1/V2/V3 model sources or reuse consumed tests to tune this experiment. The expanded software suite now passes 169 Python tests; this is not a new model-accuracy result.
+The bounded V3 experiment has completed three epochs and its fresh 20,000-review product-group evaluation. Its best balanced-IDF development macro-F1 improved by only .000712 over V2, below the declared .005 promotion threshold, so the application retains V2. On the new check, retained V2 scored 67.55% accuracy / .5486 macro-F1; balanced IDF scored 67.82% / .5597 and moderate IDF 72.375% / .5518. These fresh-check outcomes did not change selection. [Milestone 12](../reports/Milestone_12.md) preserves all outcomes and the byte-identical aggregate snapshot; [learning notes](FEEDBACK_V3_LEARNING.md) explain the mathematics. All three rating checks are consumed. Model/source/data reload checks, actual HTTP/browser predictions and 47-file wheel parity passed. The 169-test suite remains current. Source and qualified aggregate evidence are delivered through the existing GitHub repository; no further accuracy-chasing experiment is scheduled. Human/customer validation remains pending.
 
-Version 2.1, 14 October 2026. Local CPU project for a beginner BTech AI/ML student graduating June 2027, targeting applied ML/AI engineering. The user requires this PC only and a free runtime. No paid model API or cloud service is required.
+Version 2.2, 14 October 2026. Local CPU project for a beginner BTech AI/ML student graduating June 2027, targeting applied ML/AI engineering. The user requires this PC only and a free runtime. No paid model API or cloud service is required.
 
 ## Current result
 
