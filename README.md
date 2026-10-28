@@ -2,7 +2,7 @@
 
 **Local NLP intent review and large-data customer-feedback ML experiments.**
 
-The [bounded rating-error investigation](docs/FEEDBACK_V3.md) completed three training passes and a fresh evaluation. Neither new candidate met the predeclared development promotion rule, so the app retains V2. All outcomes, including the negative selection result, are preserved in [Milestone 12](reports/Milestone_12.md). **90% rating accuracy was not achieved.**
+**Headline result:** 96.24% accuracy and 0.9624 macro-F1 on 4,500 CLINC150 known-intent test requests (150 intents), using frozen MPNet embeddings, a trained classifier and temperature calibration, versus 91.96% for the lexical baseline.
 
 IntentDesk helps a reviewer identify what a request is about and prepare the appropriate team handoff. It includes reproducible model comparisons, evaluation reports, a Python API, a browser interface and a card-support demonstration. It runs on CPU without paid model APIs.
 
@@ -19,6 +19,8 @@ IntentDesk helps a reviewer identify what a request is about and prepare the app
 - **Separate retrieval experiment:** disk-based BM25 search over 8.84 million MS MARCO passages. These research passages are not customer support documentation or verified answers.
 - **Updated card workflow:** a separately trained semantic/character hybrid at `/card-v3`, with its own review queue and a learned clarification category. The original queue and pilot remain preserved.
 - **Large-data feedback ML lab:** pinned 1.98 GB of public reviews, product-disjoint fit/development/test partitions, classical rating classifiers, numeric regression, clustering, full-fit streaming learning and custom transformers trained from scratch. Review stars are a separate target from support intents. See [the lab guide](docs/FEEDBACK_ML_LAB.md).
+
+The [bounded rating-error investigation](docs/FEEDBACK_V3.md) completed three training passes and a fresh evaluation. Neither new candidate met the predeclared development promotion rule, so the app retains V2. All outcomes, including the negative selection result, are preserved in [Milestone 12](reports/Milestone_12.md). **90% rating accuracy was not achieved.**
 
 The feedback lab completed **20 epochs for each scratch transformer** and both final evaluations. The original preselected streaming classifier scored **70.37% accuracy / 0.5427 macro-F1** on its original check. On a separate fresh product-group sample, the development-selected word/character model scored **69.13% / 0.5591**, versus the original model on that same sample at **67.955% / 0.5487**. The app uses the verified improvement and displays both comparisons separately. **90% accuracy was not achieved.** See [the completed follow-up](reports/Milestone_11.md).
 
